@@ -7,13 +7,7 @@
     "url": "https://github.com/angular/universal-starter.git"
   },
   "contributors": [
-    "AngularClass <hello@angularclass.com>",
-    "PatrickJS <patrick@angularclass.com>",
-    "Jeff Whelpley <jeff@gethuman.com>",
-    "Jeff Cross <crossj@google.com>",
-    "Mark Pieszak <mpieszak84@gmail.com>",
-    "Jason Jean <jasonjean1993@gmail.com>",
-    "Fabian Wiles <fabian.wiles@gmail.com>"
+    "Gabriel Zanatto Salami <gabriel.zanatto2@gmail.com>"
   ],
   "scripts": {
     "ng": "ng",
@@ -26,7 +20,9 @@
     "compile:server": "tsc -p server.tsconfig.json",
     "generate:prerender": "cd dist && node prerender",
     "serve:prerender": "cd dist/browser && http-server",
-    "serve:ssr": "node dist/server"
+    "serve:ssr": "node dist/server",
+    "start:heroku": "node dist/server",
+    "postinstall": "npm run build:ssr"
   },
   "pre-commit": [],
   "private": true,
