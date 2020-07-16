@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
   selector: 'app-home',
   template: `
     <h3>{{ message }}</h3>
-    <img [src]="image">
+    <img [src]="image" alt="SSR logo">
   `
 })
 export class HomeComponent {
