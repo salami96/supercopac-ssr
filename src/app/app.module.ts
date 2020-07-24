@@ -1,26 +1,34 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
-import {TransferHttpCacheModule} from '@nguniversal/common';
+import { AppComponent } from './app.component';
+import { TransferHttpCacheModule } from '@nguniversal/common';
+
+import { IconsModule } from './icons/icons.module';
+import { AppRoutingModule } from './routing/app.routing.module';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     HomeComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'my-app'}),
-    RouterModule.forRoot([
+    BrowserModule.withServerTransition({appId: 'supercopac-ssr'}),
+    IconsModule,
+    AppRoutingModule,
+    /* RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full'},
       { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
       { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
-    ]),
+    ]), */
     TransferHttpCacheModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    IconsModule
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

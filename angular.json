@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-universal-demo": {
+    "supercopac-ssr": {
       "root": "",
       "projectType": "application",
       "architect": {
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-universal-demo:build"
+            "browserTarget": "supercopac-ssr:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-universal-demo:build:production"
+              "browserTarget": "supercopac-ssr:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-universal-demo:build"
+            "browserTarget": "supercopac-ssr:build"
           }
         },
         "test": {
@@ -167,10 +167,11 @@
     },
     "@schematics/angular:component": {
       "spec": false,
-      "inlineStyle": true,
-      "inlineTemplate": true,
+      "inlineStyle": false,
+      "inlineTemplate": false,
       "prefix": "app",
-      "styleext": "css"
+      "styleext": "css",
+      "project": "supercopac-ssr"
     },
     "@schematics/angular:directive": {
       "spec": false,
@@ -180,13 +181,15 @@
       "spec": false
     },
     "@schematics/angular:module": {
-      "spec": false
+      "spec": false,
+      "project": "supercopac-ssr"
     },
     "@schematics/angular:pipe": {
       "spec": false
     },
     "@schematics/angular:service": {
-      "spec": false
+      "spec": false,
+      "project": "supercopac-ssr"
     }
   }
 }

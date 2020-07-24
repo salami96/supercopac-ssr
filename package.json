@@ -11,10 +11,10 @@
   ],
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng s --port 80 --host 0.0.0.0 ",
     "build": "ng build",
-    "lint": "ng lint ng-universal-demo",
-    "build:client-and-server-bundles": "ng build --prod && ng run ng-universal-demo:server:production",
+    "lint": "ng lint supercopac-ssr",
+    "build:client-and-server-bundles": "ng build --prod && ng run supercopac-ssr:server:production",
     "build:prerender": "npm run build:client-and-server-bundles && npm run compile:server && npm run generate:prerender",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "compile:server": "tsc -p server.tsconfig.json",
@@ -44,7 +44,8 @@
     "express": "^4.15.2",
     "reflect-metadata": "^0.1.10",
     "rxjs": "6.3.3",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "angular-feather": "^5.3.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.11.4",

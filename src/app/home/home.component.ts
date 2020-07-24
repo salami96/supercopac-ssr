@@ -1,16 +1,44 @@
-import {Component} from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  template: `
-    <h3>{{ message }}</h3>
-    <img [src]="image" alt="SSR logo">
-  `
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  public message = `Angular Universal`;
-  // tslint:disable-next-line:max-line-length
-  public image = 'https://camo.githubusercontent.com/81f72f2fdf98aa1d30b5b215bc8ca9420b249e81/68747470733a2f2f616e67756c61722e696f2f67656e6572617465642f696d616765732f6d61726b6574696e672f636f6e636570742d69636f6e732f756e6976657273616c2e706e67';
+export class HomeComponent implements OnInit {
 
-  constructor() {}
+  constructor(
+    // private uService: UserService,
+    private route: ActivatedRoute,
+    @Inject(PLATFORM_ID) private platformID: Object
+  ) {}
+
+  ngOnInit() {
+    // this.uService.ping().subscribe(resp => console.log(resp));
+    if (isPlatformBrowser(this.platformID)) {
+      this.route.params.subscribe(res => {
+        if (res.data === 'cadastro') {
+          const checkExist = setInterval(function() {
+            if (document.readyState !== 'loading') {
+              document.getElementById('cadastro').click();
+              clearInterval(checkExist);
+            }
+          }, 100);
+        }
+      });
+    }
+  }
+
+  animate(id: string, animationName: string, event: any) {
+    if (event.type === 'mouseover') {
+      const node = document.getElementById(id);
+      node.classList.add('animated', animationName);
+    }
+    if (event.type === 'mouseout') {
+      const node = document.getElementById(id);
+      node.classList.remove('animated', animationName);
+    }
+  }
 }
