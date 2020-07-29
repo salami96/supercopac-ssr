@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'lazy', loadChildren: 'app/lazy/lazy.module#LazyModule' },
   { path: 'lazy/nested', loadChildren: 'app/lazy/lazy.module#LazyModule' },
+  { path: 'ofertas', loadChildren: 'app/proms/proms.module#PromsModule' },
   { path: 'nao-encontrado', loadChildren: 'app/errors/errors.module#ErrorsModule' }
   /* { path: 'compras', component: ShopComponent },
   { path: 'saiba-mais', component: KnowMoreComponent },

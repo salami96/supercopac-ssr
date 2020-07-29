@@ -38,7 +38,8 @@ import {
   IconUsers,
   IconFacebook,
   IconStar,
-  IconShare
+  IconShare,
+  IconHome
 } from 'angular-feather';
 
 const icons = [
@@ -80,7 +81,8 @@ const icons = [
   IconUsers,
   IconFacebook,
   IconStar,
-  IconShare
+  IconShare,
+  IconHome
 ];
 
 @NgModule({

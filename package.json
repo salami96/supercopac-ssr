@@ -1,5 +1,5 @@
 {
-  "name": "ng-universal-demo",
+  "name": "supercopac-ssr",
   "version": "0.0.0",
   "license": "MIT",
   "repository": {
@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "ng": "ng",
-    "start": "ng s --port 80 --host 0.0.0.0 ",
+    "start": "npm run postinstall && npm run start:heroku",
+    "serve": "ng s --host 0.0.0.0 --port 80",
     "build": "ng build",
     "lint": "ng lint supercopac-ssr",
     "build:client-and-server-bundles": "ng build --prod && ng run supercopac-ssr:server:production",
