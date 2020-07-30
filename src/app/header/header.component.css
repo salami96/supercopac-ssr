@@ -32,6 +32,7 @@ div.nav-item {
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
+    transition: 500ms;
 }
 div.nav-item.isActive {
     box-shadow:
