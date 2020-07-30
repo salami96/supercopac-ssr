@@ -40,26 +40,26 @@
     </div>
   </nav>
   <nav class="navbar navbar-expand-lg navbar-success bg-success fixed-bottom">
-    <div class="nav-item" routerLinkActive="isActive">
-      <a class="tab" routerLink="/">
+    <div class="nav-item" routerLinkActive="isActive" [routerLinkActiveOptions]="{ exact: true }">
+      <a class="tab" [routerLink]="[ '/' ]">
         <i-home></i-home>
         Início
       </a>
     </div>
-    <div class="nav-item" routerLinkActive="isActive">
-      <a class="tab" routerLink="/compras">
+    <div class="nav-item" routerLinkActive="isActive" [routerLinkActiveOptions]="{ exact: true }">
+      <a class="tab" [routerLink]="[ '/compras' ]">
         <i-shopping-cart></i-shopping-cart>
         Comprar
       </a>
     </div>
-    <div class="nav-item" routerLinkActive="isActive">
-      <a class="tab" routerLink="/saiba-mais">
-        <i-help-circle></i-help-circle>
+    <div class="nav-item" routerLinkActive="isActive" [routerLinkActiveOptions]="{ exact: true }">
+      <a class="tab" [routerLink]="[ '/saiba-mais' ]">
+        <i-info></i-info>
         Tutorial
       </a>
     </div>
-    <div class="nav-item" routerLinkActive="isActive">
-      <a class="tab" routerLink="/ofertas">
+    <div class="nav-item" routerLinkActive="isActive" [routerLinkActiveOptions]="{ exact: true }">
+      <a class="tab" [routerLink]="[ '/ofertas' ]">
         <i-trending-down></i-trending-down>
         Ofertas
       </a>
