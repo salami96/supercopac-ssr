@@ -1,4 +1,17 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5em auto;
+    max-width: 600px;
+    padding: 1em;
+    gap: 1em;
+}
 img {
-    max-width: 50vw;
-    max-height: 50vh;
+    width: 80%;
+    max-width: 500px;
+}
+h2 {
+    font-size: 1.5em;
 }

@@ -1,0 +1,86 @@
+<div class="card-title">
+  <img src="favicon.ico" class="logo">
+  Entre em contato com o Supermercado Copac!
+</div>
+<div class="card-body">
+  <a role="button" class="btn btn-block btn-outline-dark phone" href="tel:+555136584137">
+    <i-phone class="btn-ico"></i-phone>
+    Ligue para nosso telefone
+  </a>
+  <a role="button" class="btn btn-block btn-outline-secondary phone" href="https://www.google.com/maps/dir/-29.9543923,-51.6307514/copac/@-29.9558339,-51.6322168,18z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x951bc11a8a8b3cdd:0x8b2261e53fcc3dfc!2m2!1d-51.631689!2d-29.957336">
+    <i-map class="btn-ico"></i-map>
+    Como chegar ao supermercado
+  </a>
+  <button class="btn btn-block btn-outline-primary fb" (click)="face()">
+    <img src="/assets/fb.png" alt="Facebook Icon" class="fb-img">
+    Curta nossa Página no Facebook
+  </button>
+  <button class="btn btn-block btn-outline-success wp" (click)="whats()">
+    <img src="/assets/wpp.png" alt="WhatsApp Icon" class="logo">
+    Converse com a gente no WhatsApp
+  </button>
+  <a role="button" class="btn btn-block btn-outline-info msg" href="https://www.messenger.com/t/514326185427917">
+    <img src="/assets/messenger.png" alt="Messenger Icon" class="logo">
+    Converse com a gente no Messenger
+  </a>
+  <a role="button" class="btn btn-block btn-outline-info insta" href="https://www.instagram.com/supercopac">
+    <img src="/assets/insta.png" alt="Instagram Icon" class="logo">
+    Siga a gente no Instagram
+  </a>
+</div>
+<div class="modal fade" id="envio-whats" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          Cadastrar WhatsApp
+            <button class="btn btn-sm btn-outline-dark" (click)="showHelp()">
+            <i-help-circle></i-help-circle>
+          </button>
+        </h5>
+        <button type="button" class="close" id="close" (click)="envioOK = false" data-dismiss="modal" aria-label="Close">
+          <i-x-square></i-x-square>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div role="alert" class="alert alert-info">
+          Se cadastrando você aceita receber notificações de nossas promoções diretamente no seu celular.
+        </div>
+        <div class="label-float">
+          <input type="text" [(ngModel)]="nome" placeholder=" " (keyup.enter)="nextFocus()" autofocus />
+          <label>Nome Completo</label>
+        </div>
+        <div class="label-float">
+          <input type="text" id="number" [(ngModel)]="telefone" placeholder=" " (keyup.enter)="save()"
+          placeholder="(51) 999999999" mask="(00) 000000009" />
+          <label>WhatsApp</label>
+        </div>
+        <!-- <mat-form-field class="envia-whats">
+          <mat-label>Informe seu nome</mat-label>
+          <input matInput [(ngModel)]="nome" placeholder="Fulano de Tal" (keyup.enter)="nextFocus()" type="text">
+        </mat-form-field>
+        <mat-form-field class="envia-whats">
+          <mat-label>WhatsApp</mat-label>
+          <input type="text" id="number" [(ngModel)]="telefone" matInput (keyup.enter)="save()"
+          placeholder="(51) 999999999" mask="(00) 000000009">
+        </mat-form-field> -->
+        <button class="btn btn-block btn-success wp" (click)="save()">
+          <img src="/assets/wpp.png" alt="WhatsApp Icon" class="logo">
+          Salve seu número
+        </button>
+        <div class="separator">
+          ou
+        </div>
+        <button class="btn btn-block btn-outline-success wp" (click)="whats()">
+          <img src="/assets/wpp.png" alt="WhatsApp Icon" class="logo">
+          Fale diretamente com a gente
+        </button>
+        <div role="alert" class="alert alert-danger mt-2" [hidden]="!hasError">{{msgError}}</div>
+        <div role="alert" class="alert alert-danger mt-2" [hidden]="!phoneHasError">Informe os 9 digitos do seu telefone!</div>
+        <div role="alert" class="alert alert-success mt-2" [hidden]="!envioOK">Parabéns, em breve você receberá uma mensagem nossa em seu whatsapp!</div>
+        <div class="animated zoomIn onesignal-customlink-container" [hidden]="!envioOK"></div>
+      </div>
+    </div>
+  </div>
+</div>
+

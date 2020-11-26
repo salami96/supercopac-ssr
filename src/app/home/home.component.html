@@ -1,17 +1,19 @@
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
 <section class="first-section">
   <div class="bg"></div>
+  <div class="img-wrapper">
+    <img src="/assets/logo.png" alt="Logotipo do Supermercado Copac">
+  </div>
   <h1>
     Fique em casa, se cuide
-    <i-heart style="fill: green"></i-heart>
+    <i-heart style="fill: green; stroke: green"></i-heart>
   </h1>
   <h2>Compre pelo site e entregamos para você!</h2>
-  <div class="animated zoomIn">
+  <div class="animated zoomIn call-to-action">
     <a routerLink="/compras" class="btn btn-success rounded-pill m-1">
       <i-shopping-cart></i-shopping-cart>
       Comprar agora
     </a>
-    <a routerLink="/saiba-mais" class="btn btn-outline-success rounded-pill m-1">
+    <a routerLink="/tutorial" class="btn btn-outline-success rounded-pill m-1">
       <i-info></i-info>
       Saiba mais
     </a>
@@ -21,7 +23,7 @@
     </button>
   </div>
 </section>
-<!-- <section class="container-fluid actions">
+<section class="container-fluid actions">
   <a class="card clean-card" id="cadastro" data-toggle="modal" data-target="#envio-whats">
     <i-bell class="card-icon"></i-bell>
     <div class="card-body">
@@ -29,14 +31,14 @@
       <p class="card-text">Se cadastre e receba nossa ofertas todos os dias no seu WhatsApp</p>
     </div>
   </a>
-  <a href="/home#social" class="card clean-card">
+  <a href="/#social" class="card clean-card">
     <i-facebook class="card-icon"></i-facebook>
     <div class="card-body">
       <h6 class="card-title">Redes Sociais</h6>
       <p class="card-text">Siga-nos e fale conosco pelas nossas redes sociais</p>
     </div>
   </a>
-  <a routerLink="/proms" class="card clean-card">
+  <a routerLink="/ofertas" class="card clean-card">
     <i-trending-down class="card-icon"></i-trending-down>
     <div class="card-body">
       <h6 class="card-title">Promoções</h6>
@@ -50,7 +52,7 @@
       <p class="card-text">Ver o vídeo com as ofertas especiais do fim de semana</p>
     </div>
   </a>
-  <a routerLink="/about" class="card clean-card">
+  <a routerLink="/sobre-nos" class="card clean-card">
     <i-users class="card-icon"></i-users>
     <div class="card-body">
       <h6 class="card-title">Sobre nós</h6>
@@ -111,4 +113,3 @@
     <app-contact></app-contact>
   </div>
 </section>
- -->

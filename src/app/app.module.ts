@@ -6,28 +6,32 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { IconsModule } from './icons/icons.module';
 import { AppRoutingModule } from './routing/app.routing.module';
-import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { ContactComponent } from './contact/contact.component';
+import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    ContactComponent,
     HomeComponent,
+    HeaderComponent,
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'supercopac-ssr'}),
-    IconsModule,
     AppRoutingModule,
-    /* RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full'},
-      { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
-      { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
-    ]), */
+    BrowserModule.withServerTransition({ appId: 'supercopac-ssr' }),
+    FormsModule,
+    HttpClientModule,
+    IconsModule,
     TransferHttpCacheModule,
   ],
   providers: [
-    IconsModule
+    AppRoutingModule,
+    IconsModule,
+    UserService
   ],
   bootstrap: [ AppComponent ]
 })

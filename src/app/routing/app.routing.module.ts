@@ -23,11 +23,18 @@ import { FormComponent } from '../form/form.component'; */
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'lazy', loadChildren: 'app/lazy/lazy.module#LazyModule' },
-  { path: 'lazy/nested', loadChildren: 'app/lazy/lazy.module#LazyModule' },
+  { path: 'comprar', loadChildren: 'app/proms/proms.module#PromsModule' },
+  { path: 'tutorial', loadChildren: 'app/proms/proms.module#PromsModule' },
   { path: 'ofertas', loadChildren: 'app/proms/proms.module#PromsModule' },
-  { path: 'nao-encontrado', loadChildren: 'app/errors/errors.module#ErrorsModule' },
-  { path: '**', loadChildren: 'app/errors/errors.module#ErrorsModule' }
+  { path: 'video', loadChildren: 'app/proms/proms.module#PromsModule' },
+  { path: 'sobre-nos', loadChildren: 'app/proms/proms.module#PromsModule' },
+  { path: 'nada-encontrado', loadChildren: 'app/errors/errors.module#ErrorsModule' },
+  { path: 'home', redirectTo: '' },
+  { path: 'compras', redirectTo: 'comprar' },
+  { path: 'saiba-mais', redirectTo: 'tutorial' },
+  { path: 'proms', redirectTo: 'ofertas' },
+  { path: 'about', redirectTo: 'sobre-nos' },
+  { path: '**', redirectTo: 'nada-encontrado' }
   /* { path: 'compras', component: ShopComponent },
   { path: 'saiba-mais', component: KnowMoreComponent },
   // { path: 'compras', component: LimitComponent },

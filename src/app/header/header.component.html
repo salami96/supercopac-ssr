@@ -1,105 +1,29 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-success bg-success">
-    <a class="navbar-brand" routerLink="/home"><img src="favicon.ico"> Super Copac</a>
+  <nav class="navbar navbar-expand-md navbar-success bg-success">
+    <a class="navbar-brand" routerLink="/"><img src="favicon.ico"> Super Copac</a>
     <button class="navbar-toggler btn-success" type="button" data-toggle="collapse" data-target="#menu"
-      aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
-      <i-menu></i-menu>
+      aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation" (click)="show = !show">
+      <i-chevron-down [hidden]="show"></i-chevron-down>
+      <i-x [hidden]="!show"></i-x>
     </button>
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item btn btn-success" routerLinkActive="active">
-          <a class="nav-link text-white" routerLink="/compras">Compre online</a>
+          <a class="nav-link text-white" routerLink="/compras">Comprar</a>
         </li>
         <li class="nav-item btn btn-success" routerLinkActive="active">
-          <a class="nav-link text-white" routerLink="/saiba-mais">Saiba mais</a>
-        </li>
-        <li class="nav-item btn btn-success nav-proms-analytics" routerLinkActive="active">
-          <a class="nav-link text-white" routerLink="/proms">Promoções</a>
+          <a class="nav-link text-white" routerLink="/tutorial">Tutorial</a>
         </li>
         <li class="nav-item btn btn-success" routerLinkActive="active">
-          <a class="nav-link text-white" routerLink="/about">Sobre nós</a>
+          <a class="nav-link text-white" routerLink="/ofertas">Ofertas</a>
         </li>
-        <li *ngIf="nome !== null" class="nav-item dropdown btn btn-success">
-          <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-            aria-haspopup="true" aria-expanded="false">Criar</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item btn" routerLink="/create-proms">Promoções</a>
-            <a class="dropdown-item btn" routerLink="/create-notif">Notificações</a>
-            <a class="dropdown-item btn" routerLink="/publish-video">Vídeo</a>
-          </div>
+        <li class="nav-item btn btn-success" routerLinkActive="active">
+          <a class="nav-link text-white" routerLink="/video">Vídeo</a>
+        </li>
+        <li class="nav-item btn btn-success" routerLinkActive="active">
+          <a class="nav-link text-white" routerLink="/sobre-nos">Sobre nós</a>
         </li>
       </ul>
-      <button *ngIf="nome === null" id="modal" data-toggle="modal" data-target="#login"
-        class="nav-iten btn btn-success login">
-        <i-user></i-user>
-      </button>
-      <button *ngIf="nome !== null" (click)="deslogar()" class="nav-iten btn btn-success login">
-        <i-user></i-user>
-        Sair
-      </button>
-    </div>
-  </nav>
-  <nav class="navbar navbar-expand-lg navbar-success bg-success fixed-bottom">
-    <div class="nav-item" routerLinkActive="isActive" [routerLinkActiveOptions]="{ exact: true }">
-      <a class="tab" [routerLink]="[ '/' ]">
-        <i-home></i-home>
-        Início
-      </a>
-    </div>
-    <div class="nav-item" routerLinkActive="isActive" [routerLinkActiveOptions]="{ exact: true }">
-      <a class="tab" [routerLink]="[ '/compras' ]">
-        <i-shopping-cart></i-shopping-cart>
-        Comprar
-      </a>
-    </div>
-    <div class="nav-item" routerLinkActive="isActive" [routerLinkActiveOptions]="{ exact: true }">
-      <a class="tab" [routerLink]="[ '/saiba-mais' ]">
-        <i-info></i-info>
-        Tutorial
-      </a>
-    </div>
-    <div class="nav-item" routerLinkActive="isActive" [routerLinkActiveOptions]="{ exact: true }">
-      <a class="tab" [routerLink]="[ '/ofertas' ]">
-        <i-trending-down></i-trending-down>
-        Ofertas
-      </a>
     </div>
   </nav>
 </header>
-<!-- <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"><span data-feather="user"></span>Login do Usuário</h5>
-        <button type="button" class="close" id="close" data-dismiss="modal" aria-label="Close">
-          <i-x-square></i-x-square>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="form-signin" (submit)="logar()" action="#" method="dialog">
-          <div class="form-label-group">
-            <label for="inputEmail">Email:</label>
-            <input type="email" id="inputEmail" name="inputEmail" [(ngModel)]="inputEmail" [class.invalid]="erroEmail"
-            class="form-control invalid" placeholder="email@domain.com" required autofocus>
-            <div class="alert alert-danger" role="alert" [hidden]="!erroEmail">
-              Informe corretamente o campo de email!
-            </div>
-          </div>
-          <div class="form-label-group">
-            <label for="inputPassword">Senha:</label>
-            <input type="password" id="inputPassword" [(ngModel)]="inputSenha" name="inputSenha" [class.invalid]="erroSenha"
-             class="form-control" placeholder="*******">
-          </div>
-          <hr>
-          <div class="alert alert-danger" role="alert" [hidden]="!erroSenha">
-            Informe corretamente o campo de senha!
-          </div>
-          <div class="alert alert-danger" role="alert" [hidden]="!erroLogin">
-            Email ou senha incorretos!
-          </div>
-          <button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
