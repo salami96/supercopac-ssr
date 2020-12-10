@@ -1,7 +1,4 @@
-<div class="card-title">
-  <img src="favicon.ico" class="logo">
-  Entre em contato com o Supermercado Copac!
-</div>
+<h4>Entre em contato com o Supermercado Copac!</h4>
 <div class="card-body">
   <a role="button" class="btn btn-block btn-outline-dark phone" href="tel:+555136584137">
     <i-phone class="btn-ico"></i-phone>
@@ -32,12 +29,12 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">
-          Cadastrar WhatsApp
-            <button class="btn btn-sm btn-outline-dark" (click)="showHelp()">
+        <div class="modal-title">
+          <h5>Cadastrar WhatsApp</h5>
+          <span class="btn btn-sm btn-outline-info badge" (click)="showHelp()">
             <i-help-circle></i-help-circle>
-          </button>
-        </h5>
+          </span>
+        </div>
         <button type="button" class="close" id="close" (click)="envioOK = false" data-dismiss="modal" aria-label="Close">
           <i-x-square></i-x-square>
         </button>
@@ -52,7 +49,7 @@
         </div>
         <div class="label-float">
           <input type="text" id="number" [(ngModel)]="telefone" placeholder=" " (keyup.enter)="save()"
-          placeholder="(51) 999999999" mask="(00) 000000009" />
+          placeholder="(51) 9 9999-9999" mask="(00) 000000009" />
           <label>WhatsApp</label>
         </div>
         <!-- <mat-form-field class="envia-whats">
@@ -64,7 +61,7 @@
           <input type="text" id="number" [(ngModel)]="telefone" matInput (keyup.enter)="save()"
           placeholder="(51) 999999999" mask="(00) 000000009">
         </mat-form-field> -->
-        <button class="btn btn-block btn-success wp" (click)="save()">
+        <button class="btn btn-block btn-success wp mt-3" (click)="save()">
           <img src="/assets/wpp.png" alt="WhatsApp Icon" class="logo">
           Salve seu número
         </button>

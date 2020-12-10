@@ -37,18 +37,19 @@ export class ContactComponent implements OnInit {
 
   save() {
     if (this.isValid(this.nome) && this.telefone) {
-      this.uService.envioWhats(this.nome, this.telefone).subscribe(resp => {
-        if (resp.status) {
-          this.envioOK = true;
-          this.phoneHasError = false;
-          this.hasError = false;
-          this.telefone = '';
-          this.nome = '';
-        } else {
-          this.msgError = resp.msg;
-          this.hasError = true;
-        }
-      });
+      alert(this.nome + this.telefone);
+      // this.uService.envioWhats(this.nome, this.telefone).subscribe(resp => {
+      //   if (resp.status) {
+      //     this.envioOK = true;
+      //     this.phoneHasError = false;
+      //     this.hasError = false;
+      //     this.telefone = '';
+      //     this.nome = '';
+      //   } else {
+      //     this.msgError = resp.msg;
+      //     this.hasError = true;
+      //   }
+      // });
     } else {
       this.hasError = true;
     }

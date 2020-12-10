@@ -12,6 +12,11 @@ import { ContactComponent } from './contact/contact.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import * as mask from 'ngx-mask';
+
+export const options: Partial<mask.IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -26,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     IconsModule,
+    mask.NgxMaskModule.forRoot(options),
     TransferHttpCacheModule,
   ],
   providers: [
