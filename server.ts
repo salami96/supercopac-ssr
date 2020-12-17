@@ -36,16 +36,30 @@ app.set('views', join(DIST_FOLDER, 'browser'));
 // Example Express Rest API endpoints
 // app.get('/api/**', (req, res) => { });
 
-// Server static files from /browser
-app.get('/assets/*.*', express.static(join(DIST_FOLDER, 'browser'), {
-  maxAge: '1y'
-}));
-
 // Use plugin to serve Brotli files if browser supports them or fallback to Gzip
-app.use('/', expressStaticGzip(join(__dirname + '/dist/browser'), {
+app.get('*/*', expressStaticGzip(join(DIST_FOLDER, 'browser'), {
   enableBrotli: true,
   maxAge: '1y'
 }));
+// app.get('*.css', expressStaticGzip(join(__dirname + '/dist/browser'), {
+//   enableBrotli: true,
+//   maxAge: '1y'
+// }));
+// app.get('*.html', expressStaticGzip(join(__dirname + '/dist/browser'), {
+//   enableBrotli: true,
+//   maxAge: '1y'
+// }));
+
+// Server static files from /browser
+// app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
+//   maxAge: '1y'
+// }));
+
+/*      this.app.use(express.static(__dirname + '/public/app'));
+        this.app.get('/*', function(req, res){
+            res.sendFile(__dirname + '/public/app/');
+        });
+*/
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
