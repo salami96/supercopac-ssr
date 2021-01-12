@@ -23,7 +23,7 @@ body {
   left: 0;
   right: 0;
   opacity: 0.6;
-  background-image: url("/assets/alf.jpg");
+  background-image: url("https://res.cloudinary.com/hcg7pmygp/image/upload/c_thumb,w_200/alf.jpg");
   background-size: 100px 100px;
 }
 .first-section .img-wrapper {
