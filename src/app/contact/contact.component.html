@@ -43,7 +43,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <div role="alert" class="alert alert-info">
+        <div role="alert" class="alert alert-info help">
           Se cadastrando você aceita receber notificações de nossas promoções diretamente no seu celular.
         </div>
         <div class="label-float">
@@ -55,29 +55,24 @@
           placeholder="(51) 9 9999-9999" mask="(00) 000000009" />
           <label>WhatsApp</label>
         </div>
-        <!-- <mat-form-field class="envia-whats">
-          <mat-label>Informe seu nome</mat-label>
-          <input matInput [(ngModel)]="nome" placeholder="Fulano de Tal" (keyup.enter)="nextFocus()" type="text">
-        </mat-form-field>
-        <mat-form-field class="envia-whats">
-          <mat-label>WhatsApp</mat-label>
-          <input type="text" id="number" [(ngModel)]="telefone" matInput (keyup.enter)="save()"
-          placeholder="(51) 999999999" mask="(00) 000000009">
-        </mat-form-field> -->
-        <button class="btn btn-block btn-success wp mt-3" (click)="save()">
+        <button class="btn btn-block btn-success wp mt-3" (click)="save()" [disabled]="loading">
           <img src="/assets/wpp.png" alt="WhatsApp Icon" class="logo">
           Salve seu número
         </button>
         <div class="separator">
           ou
         </div>
-        <button class="btn btn-block btn-outline-success wp" (click)="whats()">
+        <button class="btn btn-block btn-outline-success wp" (click)="whats()" [disabled]="loading">
           <img src="/assets/wpp.png" alt="WhatsApp Icon" class="logo">
           Fale diretamente com a gente
         </button>
-        <div role="alert" class="alert alert-danger mt-2" [hidden]="!hasError">{{msgError}}</div>
-        <div role="alert" class="alert alert-danger mt-2" [hidden]="!phoneHasError">Informe os 9 digitos do seu telefone!</div>
-        <div role="alert" class="alert alert-success mt-2" [hidden]="!envioOK">Parabéns, em breve você receberá uma mensagem nossa em seu whatsapp!</div>
+        <div role="alert" class="alert alert-info show mt-4" [hidden]="!loading">
+          <anim-loading></anim-loading>
+          Salvando seu número...
+        </div>
+        <div role="alert" class="alert alert-danger mt-4" [hidden]="!hasError || loading"><i-alert-circle></i-alert-circle>{{msgError}}</div>
+        <div role="alert" class="alert alert-danger mt-4" [hidden]="!phoneHasError || loading"><i-alert-circle></i-alert-circle>Informe o seu telefone completo!</div>
+        <div role="alert" class="alert alert-success mt-4" [hidden]="!envioOK || loading"><i-check></i-check>Parabéns, em breve você receberá uma mensagem nossa em seu whatsapp!</div>
         <div class="animated zoomIn onesignal-customlink-container" [hidden]="!envioOK"></div>
       </div>
     </div>

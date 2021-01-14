@@ -1,0 +1,114 @@
+<div class="container-fluid">
+  <div class="card card-clean" *ngIf="!matrizData">
+    <h3 class="card-title text-success" id="matriz">Matriz - Área de Produção</h3>
+    <div class="card-body">
+      <h5>Histórico</h5>
+      <p>
+        A COPAC foi fundada em 28 de julho de 1991, tendo como base social as
+        famílias do Assentamento Trinta de Maio, localizado em Charqueadas (RS). O
+        processo de assentamento teve início em 1987 e perdurou até janeiro de 1991
+        (período nos acampamentos), quando foi oficializado o Assentamento 30 de
+        Maio. No entanto, mesmo antes da sua homologação, as famílias já haviam
+        iniciado as discussões para a constituição de uma cooperativa como forma
+        organizativa da produção do assentamento.
+        O desenvolvimento do assentamento foi marcado por uma série de
+        dificuldades econômicas e produtivas que, no entanto, só fortaleceu a
+        resolução das famílias em potencializar o modo cooperativo e solidário de
+        produção.
+      </p>
+      <p>
+        As famílias do Assentamento Trinta de Maio, todas, são filhos e filhas de
+        pequenos agricultores, oriundos da região do Alto Uruguai, norte do estado do
+        RS, de várias etnias, credos e cores; todos os associados fundadores
+        passaram três anos acampados. O Assentamento é composto por 46 famílias,
+        criado pelo Governo do Estado do RS em uma área de 850 hectares de terra
+        (antiga fazenda São Pedro, antes pertencente à Secretária da Justiça do
+        Estado do RS).
+      </p>
+      <p>
+        Atualmente são 22 famílias (50 sócios/as) da COPAC, todos/as residem
+        no assentamento e integram o quadro social da Cooperativa, que garante a
+        organização da produção e a propriedade coletiva dos meios de produção
+        agropecuários, agroindustriais e de comercialização. Os lotes de terra das
+        famílias assentadas cooperadas não possuem divisão, formando uma área
+        total de 408,54 hectares, exploradas de forma coletiva, é destinada uma área
+        de 05 hectares para agrovila onde estão as moradias e comunidade. Desta
+        forma, as características do sistema de produção são também coletivas, todos
+        os associados assumem a condição de sócios cotistas e trabalhadores ao
+        mesmo tempo, tendo como renda familiar o aporte de trabalho (horas
+        trabalhadas) nas atividades coletivas da Cooperativa, obtendo um dividendo
+        conforme o resultado do exercício, apurados pelo demonstrativo de resultados
+        e balanço patrimonial
+      </p>
+    </div>
+    <img src="../../assets/matriz.jpg" alt="">
+    <button (click)="showMatrizData(true)" id="mt" class="btn btn-outline-secondary">
+      Contato e Localização
+    </button>
+  </div>
+  <div class="card card-clean" *ngIf="matrizData">
+    <h3 class="card-title text-success" id="matrizData">Matriz</h3>
+    <div class="card-body">
+      <div class="list">
+        <a href="tel:51996573049">
+          <i-smartphone></i-smartphone>
+          <h5>51 99657-3049 (Loa)</h5>
+        </a>
+        <a href="mailto:copacmatriz@gmail.com">
+          <i-mail></i-mail>
+          <h5>copacmatriz@gmail.com</h5>
+        </a>
+        <a
+          href="https://www.google.com.br/maps/dir//Charqueadas+-+RS,+96745-000/@-30.0226023,-51.6318683,18z/data=!4m9!4m8!1m0!1m5!1m1!1s0x951bc6f7f8668713:0xbc3a0edcd8a3b48c!2m2!1d-51.6305739!2d-30.0228252!3e0">
+          <i-map></i-map>
+          <h5>Fazenda São Pedro, S/N, Interior, Charqueadas -RS</h5>
+        </a>
+      </div>
+    </div>
+    <div class="border map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1727.2494522752786!2d'+latitude+'!3d-'longitude'!2m3!1f0!2f0!'
+      +'3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAxJzIxLjIiUyA1McKwMzcnNTMuMCJX!5e0!3m2!1spt-BR!2sbr!4v1540221154392"
+        width="600" height="450" frameborder="1" style="border:0" allowfullscreen></iframe>
+    </div>
+    <button (click)="showMatrizData(false)" class="btn btn-outline-secondary">Saiba mais</button>
+  </div>
+  <div class="card clean-card" *ngIf="!supermercadoData">
+    <h3 class="card-title text-success" id="supermercado">Supermercado</h3>
+    <img src="../../assets/bg.jpg" alt="">
+    <button (click)="showFilialData(true)" class="btn btn-outline-secondary">
+      Contato e Localização
+    </button>
+  </div>
+  <div class="card clean-card" *ngIf="supermercadoData">
+    <h3 class="card-title text-success" id="supermercadoData">Supermercado</h3>
+    <div class="card-body">
+      <div class="list">
+        <a href="tel:5136584137">
+          <i-phone></i-phone>
+          <h5>51 3658-4137</h5>
+        </a>
+        <a href="tel:51995769644">
+          <i-smartphone></i-smartphone>
+          <h5>51 99576-9644 (André)</h5>
+        </a>
+        <a href="mailto:supercopac@terra.com.br">
+          <i-mail></i-mail>
+          <h5>supercopac@terra.com.br</h5>
+        </a>
+        <a
+          href="https://www.google.com.br/maps/dir//Supermercado+Copac+-+Av.+Cruz+de+Malta,+705+-+Centro,+Charqueadas+-+RS,+96745-000/@-29.9571092,-51.6322752,19z/data=!4m9!4m8!1m0!1m5!1m1!1s0x951bc11a8a8b3cdd:0x8b2261e53fcc3dfc!2m2!1d-51.631689!2d-29.957336!3e0">
+          <i-map></i-map>
+          <h5>Av. Cruz de Malta, 705, Centro, Charqueadas - RS</h5>
+        </a>
+      </div>
+    </div>
+    <div class="border map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1294.8316396084465!2d-51.63145531470528!3d-29.956843336705035!'
+        +'2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b2261e53fcc3dfc!2sSupermercado+Copac!5e0!3m2!1spt-BR!2sbr!4v1540222183652"
+        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <button (click)="showFilialData(false)" class="btn btn-outline-secondary">Saiba mais</button>
+  </div>
+</div>

@@ -41,6 +41,7 @@ import {
   IconShare,
   IconHome
 } from 'angular-feather';
+import { LoadingAnimationComponent } from './loading/loading.component';
 
 const icons = [
   IconUser,
@@ -82,10 +83,12 @@ const icons = [
   IconFacebook,
   IconStar,
   IconShare,
-  IconHome
+  IconHome,
+  LoadingAnimationComponent
 ];
 
 @NgModule({
-  exports: icons
+  exports: icons,
+  declarations: [ LoadingAnimationComponent ]
 })
 export class IconsModule { }

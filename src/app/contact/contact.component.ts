@@ -15,6 +15,7 @@ export class ContactComponent implements OnInit {
   phoneHasError = false;
   help = false;
   msgError = 'Preencha os dados corretamente!';
+  loading: boolean;
 
   constructor(private uService: UserService) { }
 
@@ -34,22 +35,33 @@ export class ContactComponent implements OnInit {
     }
     return true;
   }
+  
+  phoneIsValid(s: string): boolean {
+    if (isNull(s) || s === '' || s === undefined || s.length < 10) {
+      return false;
+    }
+    this.phoneHasError = false;
+    alert(s.length);
+    return true;
+  }
 
   save() {
-    if (this.isValid(this.nome) && this.telefone) {
-      alert(this.nome + this.telefone);
-      // this.uService.envioWhats(this.nome, this.telefone).subscribe(resp => {
-      //   if (resp.status) {
-      //     this.envioOK = true;
-      //     this.phoneHasError = false;
-      //     this.hasError = false;
-      //     this.telefone = '';
-      //     this.nome = '';
-      //   } else {
-      //     this.msgError = resp.msg;
-      //     this.hasError = true;
-      //   }
-      // });
+    if (this.isValid(this.nome) && this.phoneIsValid(this.telefone) && false) {
+      this.loading = true
+      // alert(this.nome + this.telefone);
+      this.uService.envioWhats(this.nome, this.telefone).subscribe(resp => {
+        this.loading = false;
+        if (resp.status) {
+          this.envioOK = true;
+          this.phoneHasError = false;
+          this.hasError = false;
+          this.telefone = '';
+          this.nome = '';
+        } else {
+          this.msgError = resp.msg;
+          this.hasError = true;
+        }
+      });
     } else {
       this.hasError = true;
     }
@@ -63,7 +75,7 @@ export class ContactComponent implements OnInit {
   }
 
   showHelp() {
-    document.querySelector('.alert-info').classList.toggle('show');
+    document.querySelector('.alert-info.help').classList.toggle('show');
   }
 
   nextFocus() {

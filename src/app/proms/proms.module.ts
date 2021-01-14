@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { PromsComponent } from './proms/proms.component';
+import { PromsComponent } from './proms.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [PromsComponent],
+  declarations: [ PromsComponent ],
   imports: [
     RouterModule.forChild([
       { path: '', component: PromsComponent, pathMatch: 'full'}

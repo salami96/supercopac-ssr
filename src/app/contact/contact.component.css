@@ -66,6 +66,10 @@
   margin: 0;
   overflow: hidden;
 }
+.alert {
+  display: flex;
+  gap: 1em;
+}
 .alert-info.show {
   opacity: 1;
   padding: inherit;
