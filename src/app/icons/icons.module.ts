@@ -39,7 +39,9 @@ import {
   IconFacebook,
   IconStar,
   IconShare,
-  IconHome
+  IconHome,
+  IconChevronLeft,
+  IconChevronRight
 } from 'angular-feather';
 import { LoadingAnimationComponent } from './loading/loading.component';
 
@@ -64,6 +66,8 @@ const icons = [
   IconSearch,
   IconX,
   IconChevronDown,
+  IconChevronLeft,
+  IconChevronRight,
   IconShoppingCart,
   IconMinus,
   IconArrowLeft,

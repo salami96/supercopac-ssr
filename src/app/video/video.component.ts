@@ -22,18 +22,28 @@ export class VideoComponent implements OnInit {
   }
 
   private updateMetaTags() {
-    this.title.setTitle('Supermercado Copac - Vídeo');
+    const img = 'https://copac.herokuapp.com/assets/play.png';
+    const title = 'Supermercado Copac - Vídeo';
+    const url = 'https://copac.herokuapp.com/video';
+    const description = 'Confira o vídeo com as promoções da copac';
+
+    this.title.setTitle(title);
     this.meta.updateTag({ name: 'keywords', content: 'Supercopac, Mercado, Supermercado, Promo, Oferta, Promoção, Preço, Video' });
-    this.meta.updateTag({ name: 'description', content: 'Confira o vídeo com as promoções da copac' });
+    this.meta.updateTag({ name: 'description', content: description });
     this.meta.updateTag({ name: 'type', content: 'video' });
-    this.meta.updateTag({ property: 'og:title', content: 'Supermercado Copac - Vídeo'});
-    this.meta.updateTag({ property: 'og:description', content: 'Confira o vídeo com as promoções da copac'});
-    this.meta.updateTag({ property: 'og:type', content: 'image'});
-    this.meta.updateTag({ property: 'og:image', content: 'https://copac.herokuapp.com/assets/play.png'});
-    this.meta.updateTag({ property: 'og:image:type', content: 'image/png'});
-    this.meta.updateTag({ property: 'og:image:width', content: '950'});
-    this.meta.updateTag({ property: 'og:image:height', content: '511'});
-    this.meta.updateTag({ property: 'fb:app_id', content: '507937906363306'});
+    this.meta.updateTag({ name: 'title', content: title });
+    this.meta.updateTag({ property: 'og:url', content: url });
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({ property: 'og:description', content: description });
+    this.meta.updateTag({ property: 'og:image', content: img });
+    this.meta.updateTag({ property: 'twitter:url', content: url });
+    this.meta.updateTag({ property: 'twitter:title', content: title });
+    this.meta.updateTag({ property: 'twitter:description', content: description });
+    this.meta.updateTag({ property: 'twitter:image', content: img });
+    this.meta.updateTag({ property: 'og:type', content: 'image' });
+    this.meta.updateTag({ property: 'og:image:type', content: 'image/png' });
+    this.meta.updateTag({ property: 'og:image:width', content: '950' });
+    this.meta.updateTag({ property: 'og:image:height', content: '511' });
   }
 
   ngOnInit() {

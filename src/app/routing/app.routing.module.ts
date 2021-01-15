@@ -24,7 +24,7 @@ import { FormComponent } from '../form/form.component'; */
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'comprar', loadChildren: 'app/proms/proms.module#PromsModule' },
-  { path: 'tutorial', loadChildren: 'app/proms/proms.module#PromsModule' },
+  { path: 'tutorial', loadChildren: 'app/tuto/tuto.module#TutoModule' },
   { path: 'ofertas', loadChildren: 'app/proms/proms.module#PromsModule' },
   { path: 'video', loadChildren: 'app/video/video.module#VideoModule' },
   { path: 'sobre-nos', loadChildren: 'app/about/about.module#AboutModule' },

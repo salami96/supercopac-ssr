@@ -17,10 +17,7 @@ export class AboutComponent implements OnInit {
   constructor(private meta: Meta, private title: Title) { }
 
   ngOnInit() {
-    this.title.setTitle('Supermercado Copac - Sobre nós');
-    this.meta.addTag({name: 'keywords', content: 'Assentamento, Supercopac, Mercado, Supermercado, Contato, Telefone, Sobre, Histórico'});
-    this.meta.addTag({name: 'description', content: `Saiba mais sobre nós, nossa história, nossas lutas e 
-    conquistas, ou entre em contato conosco`});
+    this.updateMetaTags();
   }
 
   public showMatrizData(b: boolean): void {
@@ -29,6 +26,32 @@ export class AboutComponent implements OnInit {
 
   public showFilialData(b: boolean): void {
     this.supermercadoData = b;
+  }
+
+  private updateMetaTags() {
+    const img = 'https://copac.herokuapp.com/assets/matriz.jpg';
+    const title = 'Supermercado Copac - Sobre nós';
+    const url = 'https://copac.herokuapp.com/sobre-nos';
+    const description = `Saiba mais sobre nós, nossa história, nossas lutas e 
+    conquistas, ou entre em contato conosco`;
+
+    this.title.setTitle(title);
+    this.meta.updateTag({ name: 'keywords', content: 'Assentamento, Supercopac, Mercado, Supermercado, Contato, Telefone, Sobre, Histórico' });
+    this.meta.updateTag({ name: 'description', content: description });
+    this.meta.updateTag({ name: 'type', content: 'website' });
+    this.meta.updateTag({ name: 'title', content: title });
+    this.meta.updateTag({ property: 'og:url', content: url });
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({ property: 'og:description', content: description });
+    this.meta.updateTag({ property: 'og:image', content: img });
+    this.meta.updateTag({ property: 'twitter:url', content: url });
+    this.meta.updateTag({ property: 'twitter:title', content: title});
+    this.meta.updateTag({ property: 'twitter:description', content: description });
+    this.meta.updateTag({ property: 'twitter:image', content: img });
+    this.meta.updateTag({ property: 'og:type', content: 'image' });
+    this.meta.updateTag({ property: 'og:image:type', content: 'image/jpg' });
+    this.meta.updateTag({ property: 'og:image:width', content: '1181' });
+    this.meta.updateTag({ property: 'og:image:height', content: '787' });
   }
 
 }
