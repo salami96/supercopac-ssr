@@ -26,12 +26,14 @@ export class VideoComponent implements OnInit {
     this.meta.updateTag({ name: 'keywords', content: 'Supercopac, Mercado, Supermercado, Promo, Oferta, Promoção, Preço, Video' });
     this.meta.updateTag({ name: 'description', content: 'Confira o vídeo com as promoções da copac' });
     this.meta.updateTag({ name: 'type', content: 'video' });
-    this.meta.updateTag({property: 'og:type', content: 'image'});
-    this.meta.updateTag({property: 'og:image', content: 'https://copac.herokuapp.com/assets/play.png'});
-    this.meta.updateTag({property: 'og:image:type', content: 'image/png'});
-    this.meta.updateTag({property: 'og:image:width', content: '950'});
-    this.meta.updateTag({property: 'og:image:height', content: '511'});
-    this.meta.updateTag({property: 'fb:app_id', content: '507937906363306'});
+    this.meta.updateTag({ property: 'og:title', content: 'Supermercado Copac - Vídeo'});
+    this.meta.updateTag({ property: 'og:description', content: 'Confira o vídeo com as promoções da copac'});
+    this.meta.updateTag({ property: 'og:type', content: 'image'});
+    this.meta.updateTag({ property: 'og:image', content: 'https://copac.herokuapp.com/assets/play.png'});
+    this.meta.updateTag({ property: 'og:image:type', content: 'image/png'});
+    this.meta.updateTag({ property: 'og:image:width', content: '950'});
+    this.meta.updateTag({ property: 'og:image:height', content: '511'});
+    this.meta.updateTag({ property: 'fb:app_id', content: '507937906363306'});
   }
 
   ngOnInit() {
@@ -57,9 +59,10 @@ export class VideoComponent implements OnInit {
   }
 
   share(): void {
+    // PRECISA MUDAR URL
     window.open(
       'http://api.whatsapp.com/send?text=Confira o video com as promoções do Super Copac.'
-      + ' Acesse https://www.supercopac.com.br/video/',
+      + ' Acesse https://copac.herokuapp.com/video/',
       '_blank'
     );
   }

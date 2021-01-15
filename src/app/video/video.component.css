@@ -37,6 +37,6 @@
 .btn-ico {
     vertical-align: top !important;
 }
-button {
+.btn.btn-block {
     margin: 1em auto;
 }
