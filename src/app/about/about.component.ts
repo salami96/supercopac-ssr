@@ -14,20 +14,11 @@ export class AboutComponent implements OnInit {
   lng = -51.631440;
   latF = -29.9573627;
   lngF = -51.631788;
-  constructor(private route: ActivatedRoute, private meta: Meta, private title: Title) {
-    this.route.params.subscribe(res => {
-      if (res.data === 'mtdata') {
-        this.matrizData = true;
-      }
-      if (res.data === 'fldata') {
-        this.supermercadoData = true;
-      }
-    });
-  }
+  constructor(private meta: Meta, private title: Title) { }
 
   ngOnInit() {
     this.title.setTitle('Supermercado Copac - Sobre nós');
-    this.meta.addTag({name: 'keywords', content: 'Supercopac, Mercado, Supermercado, Contato, Telefone, Sobre, Histórico'});
+    this.meta.addTag({name: 'keywords', content: 'Assentamento, Supercopac, Mercado, Supermercado, Contato, Telefone, Sobre, Histórico'});
     this.meta.addTag({name: 'description', content: `Saiba mais sobre nós, nossa história, nossas lutas e 
     conquistas, ou entre em contato conosco`});
   }

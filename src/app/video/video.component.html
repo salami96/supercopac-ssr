@@ -1,0 +1,44 @@
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=507937906363306&autoLogAppEvents=1"></script>
+
+<div class="container-fluid">
+  <div class="card clean-card" *ngIf="!loading">
+    <div class="card-title">
+      <h3 class="text-success mb-1">
+        {{video.titulo}}
+      </h3>
+      <h6>
+        <span class="badge badge-light">
+          <i-calendar></i-calendar>
+          Início: {{getDate(video.data | date : "shortDate")}}
+        </span>
+        <span class="badge badge-light">
+          <i-calendar></i-calendar>
+          Fim: {{getDate(video.dataFinal | date : "shortDate")}}
+        </span>
+      </h6>
+    </div>
+    <div class="div">
+      <iframe class="frame" [src]="link" style="border:none;overflow:hidden" data-autoplay="true" 
+      scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" allowFullScreen="true"></iframe>
+    </div>
+    <button class="btn btn-block btn-success" (click)="share()">
+      <img src="/assets/wpp.png" alt="WhatsApp Icon" class="wpp">
+      Compartilhar
+    </button>
+  </div>
+  <div *ngIf="loading" class="text-center card clean-card">
+    <h3 class="card-title text-success">
+      Aguarde! Carregando o Vídeo...
+    </h3>
+    <img src="/assets/loader.gif" class="w-100">
+  </div>
+  <div class="card clean-card">
+    <h3 class="card-title text-success">Quer Mais?</h3>
+    <div class="card-body">Clique no botão abaixo para acessar nossa página de promoções!</div>
+    <a class="btn btn-block btn-success" routerLink="/ofertas">
+      <i-trending-down class="btn-ico"></i-trending-down>
+      Ver mais ofertas
+    </a>
+  </div>
+</div>

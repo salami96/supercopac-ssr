@@ -1,0 +1,42 @@
+.card {
+    padding: 15px;
+    margin-top: 15px;
+    border-top: .25em green solid;
+    max-width: 1000px;
+}
+@media(min-width: 768px) {
+    .card {
+        margin: 15px auto 0;
+        padding-bottom: 0;
+    }
+}
+.frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: .25em;
+}
+.div {
+    width: 100%;
+    padding-top: 56.25%;
+    position: relative;
+}
+.container-fluid {
+    padding: 15px;
+    background-color: #f8f9fa;
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;
+}
+.wpp {
+    height: 1.5em;
+}
+.btn-ico {
+    vertical-align: top !important;
+}
+button {
+    margin: 1em auto;
+}

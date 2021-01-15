@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'comprar', loadChildren: 'app/proms/proms.module#PromsModule' },
   { path: 'tutorial', loadChildren: 'app/proms/proms.module#PromsModule' },
   { path: 'ofertas', loadChildren: 'app/proms/proms.module#PromsModule' },
-  { path: 'video', loadChildren: 'app/proms/proms.module#PromsModule' },
+  { path: 'video', loadChildren: 'app/video/video.module#VideoModule' },
   { path: 'sobre-nos', loadChildren: 'app/about/about.module#AboutModule' },
   { path: 'nada-encontrado', loadChildren: 'app/errors/errors.module#ErrorsModule' },
   { path: 'home', redirectTo: '' },
