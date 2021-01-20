@@ -1,3 +1,41 @@
-<p>
-  proms works!
-</p>
+<div class="container-fluid">
+  <ngx-masonry [options]="myOptions" [useImagesLoaded]="true" class="mx-auto mt-2">
+    <div ngxMasonryItem class="masonry-item card clean-card col-md text-center p-1" *ngFor="let product of list"
+      [class.vencido]="product.dataFinal >= hoje">
+      <div class="card-header">
+        <h5 class="card-title">{{product.titulo}}</h5>
+      </div>
+      <div class="overlay">
+        <img class="card-img-top d-block" src="{{product.img}}">
+        <a class="btn btn-outline-light" type="button" routerLink="/prom/{{product._id}}"
+          (click)="selected = product._id; ngOnInit();">
+          <i-search></i-search>
+          <br>
+          Ver Mais
+        </a>
+      </div>
+      <div class="card-body">
+        <b class="card-text">{{product.descricao}}</b>
+      </div>
+      <div class="card-footer text-center">
+        <!-- <div class="btn-group mb-1" role="group">
+        <button (click)="share(product)" class="btn-success btn buy-btn">
+          <img src="../../assets/wpp.png" alt="WhatsApp Icon" class="wpp">
+        </button>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=supercopac.com/prom/{{product._id}}" target="_blank" class="btn-primary btn fb">
+          <img src="../../assets/fb.png" alt="facebook Icon" class="wpp">
+        </a>
+      </div> -->
+        <button type="button" class="btn-success btn buy-btn btn-sm" aria-label="Comprar" data-toggle="modal"
+          data-target="#pegar-oferta" (click)="selectedProm = product">
+          <i-plus-circle></i-plus-circle>
+          Pegar Oferta
+        </button>
+        <button *ngIf="uService.user" type="button" (click)="remove(product)" class="btn btn-danger"
+          aria-label="Excluir">
+          <i-trash-2></i-trash-2>
+        </button>
+      </div>
+    </div>
+  </ngx-masonry>
+</div>

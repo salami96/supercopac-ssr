@@ -72,12 +72,9 @@ export class PromService {
   //   });
   // }
 
-  // getProms(all = false): Observable<Prom[]> {
-  //   if (all) {
-  //     return  this.http.get<Prom[]>(this.url + 'proms/');
-  //   }
-  //   return this.http.get<Prom[]>(this.url + 'new-proms/');
-  // }
+  getProms(): Observable<Prom[]> {
+    return this.http.get<Prom[]>(this.url + 'new-proms/');
+  }
 
   // getProm(id: string): Observable<Prom> {
   //   return this.http.get<Prom>(this.url + 'prom/' + id);

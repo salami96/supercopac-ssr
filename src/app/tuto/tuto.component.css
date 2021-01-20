@@ -5,10 +5,7 @@
     padding: 2em;
     margin: 1em 0;
     display: block;
-    border-top: green 0.25em solid;
-}
-.text-success {
-    color: green !important;
+    border-top: #11B176 0.25em solid;
 }
 .tuto {
     padding-top: 2em;
@@ -32,4 +29,8 @@
     .tuto img {
         width: 50%;
     }
+}
+.cart {
+    padding: .25em 1em;
+    border-radius: 1.5em;
 }

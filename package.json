@@ -46,6 +46,7 @@
     "core-js": "^2.4.1",
     "express": "^4.15.2",
     "express-static-gzip": "^2.1.0",
+    "ngx-masonry": "^1.1.4",
     "ngx-mask": "^8.1.0",
     "reflect-metadata": "^0.1.10",
     "rxjs": "6.3.3",

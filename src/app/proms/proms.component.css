@@ -1,0 +1,145 @@
+.container-fluid {
+    min-height: 90vh;
+    padding: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.5em;
+    justify-content: center;
+}
+.wpp {
+    height: 1.5em;
+}
+.vencida {
+    opacity: 0.1;
+}
+@media (min-width: 384px) {
+    .masonry-item {
+        width: 48%;
+    }
+}
+@media (min-width: 576px) {
+    .masonry-item {
+        width: 31.33%;
+    }
+}
+@media (min-width: 768px) {
+    .masonry-item {
+        width: 23%;
+    }
+}
+@media (min-width: 992px) {
+    .masonry-item {
+        width: 18%;
+    }
+}
+@media (min-width: 1200px) {
+    .masonry-item {
+        width: 14.6%;
+    }
+}
+ngx-masonry {
+    width: 100%;
+    margin: auto;
+}
+.masonry-item {
+    height: fit-content;
+    max-width: 40em;
+    margin: 0 2% 2% 0;
+}
+.buy-btn {
+    border-radius: 2em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+}
+.buy-btn {
+    background-color: green;
+    border-radius: 1.5em;
+    transition: 0.5s;
+    margin: 1px 0;
+}
+.buy-btn:hover {
+    background-color: darkgreen;
+    transition: 0.5s;
+}
+.card {
+    padding: 0;
+    background-color: #d4edda;
+}
+.card, .warnings *, .card-footer, .overlay, .overlay * {
+    border-radius: 1em;
+}
+.card-header {
+    background-color: #d4edda;
+    color: #28a745;
+    padding-bottom: 1em;
+}
+.card, .card-header, .overlay, .overlay *, .card-body, .card-footer {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-top: 1px #d4edda solid;
+}
+.overlay, .card-body, .card-footer {
+    margin-top: -1em;
+    padding-bottom: 1em;
+}
+.overlay {
+    position: relative;
+}
+.card-body {
+    background-color: #d4edda;
+    color: #28a745;
+    padding-bottom: 2em;
+}
+.card-footer {
+    background-color: white;
+    padding-top: 1em;
+}
+.overlay img {
+    max-height: 15em;
+    background-color: white;
+    object-fit: contain;
+}
+.overlay a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-bottom: 1em;
+}
+.overlay a:before {
+    content: ' ';
+    display: block;
+    /* adjust 'height' to position overlay content vertically */
+    height: 40%;
+}
+.overlay a:hover {
+    opacity: 0.9;
+    transition: 0.5s;
+}
+.fb {
+    color: #fff;
+    background-color: #3B5998;
+    border-color: #3B5998;
+    border-radius: 1.5em;
+    transition: 0.5s;
+    margin: 1px 0;
+}
+.fb:hover {
+    background-color: rgb(38, 62, 116);
+    border-color: rgb(38, 62, 116);
+    transition: 0.5s;
+}
+.btn-danger {
+    border-radius: 1.5em;
+    transition: 0.5s;
+    margin: 1px auto;
+    width: 80%;
+}
+.btn-danger:hover {
+    transition: 0.5s;
+}

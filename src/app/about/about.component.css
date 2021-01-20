@@ -1,7 +1,7 @@
 .card {
     padding: 15px;
     margin-top: 15px;
-    border-top: .25em green solid;
+    border-top: .25em #11B176 solid;
     max-width: 1000px;
 }
 @media(min-width: 768px) {
@@ -46,7 +46,17 @@ button {
     margin-top: 1em;
 }
 .list a {
-    display: flex;
-    gap: 1em;
-    color: #000;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    align-items: center;
+    justify-items: flex-start;
+    gap: 0.5em;
+    color: #222;
+}
+.list *:not(span) {
+    justify-self: center;
+}
+.list span {
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

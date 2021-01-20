@@ -6,13 +6,13 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { IconsModule } from './icons/icons.module';
 import { AppRoutingModule } from './routing/app.routing.module';
-import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ContactComponent } from './contact/contact.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import * as mask from 'ngx-mask';
+import { HomeComponent } from './home/home.component';
 
 export const options: Partial<mask.IConfig> = {
   validation: false,
@@ -22,8 +22,8 @@ export const options: Partial<mask.IConfig> = {
   declarations: [
     AppComponent,
     ContactComponent,
-    HomeComponent,
     HeaderComponent,
+    HomeComponent
   ],
   imports: [
     AppRoutingModule,

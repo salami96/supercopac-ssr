@@ -127,7 +127,11 @@ body {
   gap: 1em;
 }
 .setores .card {
+  border-top: 2px solid #11B176;
   padding: 2em;
+}
+.setores h2 {
+  color: #11B176;
 }
 .rounded-circle {
   width: 80%;
