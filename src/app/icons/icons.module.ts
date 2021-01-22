@@ -42,7 +42,9 @@ import {
   IconHome,
   IconChevronLeft,
   IconChevronRight,
-  IconPlusCircle
+  IconPlusCircle,
+  IconChevronUp,
+  IconTwitter
 } from 'angular-feather';
 import { LoadingAnimationComponent } from './loading/loading.component';
 
@@ -50,6 +52,7 @@ const icons = [
   IconUser,
   IconTrash2,
   IconGithub,
+  IconTwitter,
   IconPlus,
   IconMail,
   IconMap,
@@ -66,6 +69,7 @@ const icons = [
   IconHelpCircle,
   IconSearch,
   IconX,
+  IconChevronUp,
   IconChevronDown,
   IconChevronLeft,
   IconChevronRight,

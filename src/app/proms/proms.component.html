@@ -1,9 +1,31 @@
 <div class="container-fluid">
+  <div class="clean-card fixed-bottom" [class.p-0]="!showShareBtn">
+    <h5>
+      Compartilhar ofertas
+      <button (click)="showShareBtn = !showShareBtn" class="close">
+        <i-chevron-down class="fade" *ngIf="showShareBtn" [class.show]="showShareBtn"></i-chevron-down>
+        <i-chevron-up class="fade" *ngIf="!showShareBtn" [class.show]="!showShareBtn"></i-chevron-up>
+      </button>
+    </h5>
+    <div *ngIf="showShareBtn">
+      <span (click)="share()" class="btn-success btn-sm btn buy-btn">
+        <img src="../../assets/wpp.png" alt="WhatsApp Icon" class="wpp">
+      </span>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=copac.herokuapp.com/ofertas" 
+      target="_blank" class="btn-primary btn-sm btn fb rounded">
+        <i-facebook></i-facebook>
+      </a>
+      <a href="http://twitter.com/share?text=Olha%20essas%20ofertas%20do%20SuperCopac&url=https://copac.herokuapp.com/ofertas&hashtags=ofertas,copac,supermercado,charqueads"
+      target="_blank" class="btn-info btn-sm btn rounded">
+        <i-twitter></i-twitter>
+      </a>
+    </div>
+  </div>
   <ngx-masonry [options]="myOptions" [useImagesLoaded]="true" class="mx-auto mt-2">
-    <div ngxMasonryItem class="masonry-item card clean-card col-md text-center p-1" *ngFor="let product of list"
-      [class.vencido]="product.dataFinal >= hoje">
+    <div ngxMasonryItem class="masonry-item card col-md text-center p-1" *ngFor="let product of list">
       <div class="card-header">
         <h5 class="card-title">{{product.titulo}}</h5>
+        <span class="badge badge-pill badge-success">até {{getDate(product.dataFinal | date : "shortDate")}}</span>
       </div>
       <div class="overlay">
         <img class="card-img-top d-block" src="{{product.img}}">
@@ -18,14 +40,6 @@
         <b class="card-text">{{product.descricao}}</b>
       </div>
       <div class="card-footer text-center">
-        <!-- <div class="btn-group mb-1" role="group">
-        <button (click)="share(product)" class="btn-success btn buy-btn">
-          <img src="../../assets/wpp.png" alt="WhatsApp Icon" class="wpp">
-        </button>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=supercopac.com/prom/{{product._id}}" target="_blank" class="btn-primary btn fb">
-          <img src="../../assets/fb.png" alt="facebook Icon" class="wpp">
-        </a>
-      </div> -->
         <button type="button" class="btn-success btn buy-btn btn-sm" aria-label="Comprar" data-toggle="modal"
           data-target="#pegar-oferta" (click)="selectedProm = product">
           <i-plus-circle></i-plus-circle>
@@ -39,3 +53,4 @@
     </div>
   </ngx-masonry>
 </div>
+<app-cart-btn></app-cart-btn>

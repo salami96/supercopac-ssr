@@ -13,10 +13,10 @@ import { NgxMasonryOptions } from 'ngx-masonry';
 })
 export class PromsComponent implements OnInit {
   list: Prom[];
-  hoje: Date;
   link: SafeUrl;
   cartValue: string;
   selectedProm: Prom;
+  showShareBtn = true;
 
   @Input() selected: string;
   constructor(
@@ -38,8 +38,8 @@ export class PromsComponent implements OnInit {
     this.updateMetaTags();
     this.pService.getProms().subscribe( resp => {
       this.list = resp.filter(item => item._id !== this.selected);
+      this.list = this.list.sort((a, b) => b.data.getDate() - a.data.getDate());
     });
-    this.hoje = new Date();
   }
 
   trackByFn(item): string {
@@ -58,7 +58,7 @@ export class PromsComponent implements OnInit {
       return '';
     }
     const aux = date.split('/');
-    return aux[1] + '/' + aux[0] + '/' + aux[2];
+    return aux[1] + '/' + (aux[0].length < 2 ? '0' + aux[0] : aux[0]) + '/' + aux[2];
   }
 
   // remove(item) {
@@ -72,12 +72,20 @@ export class PromsComponent implements OnInit {
   //   });
   // }
 
-  share(p: Prom): void {
-    window.open(
-      `http://api.whatsapp.com/send?text=${p.titulo} em oferta no SuperCopac, compre online esse(s) produto(s) em:
-      \n https://www.supercopac.com.br/prom/${p._id}`,
-      '_blank'
-    );
+  share(p?: Prom): void {
+    if (p) {
+      window.open(
+        `http://api.whatsapp.com/send?text=${p.titulo} em oferta no SuperCopac, compre online esse(s) produto(s) em:
+        \n https://www.supercopac.com.br/prom/${p._id}`,
+        '_blank'
+      );
+    } else {
+      window.open(
+        `http://api.whatsapp.com/send?text=Olha essas ofertas do SuperCopac, veja todas em:
+        \n https://copac.herokuapp.com/ofertas`,
+        '_blank'
+      );
+    }
   }
 
   // openSnack(msg: string) {
