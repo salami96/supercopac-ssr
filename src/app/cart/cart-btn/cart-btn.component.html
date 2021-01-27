@@ -1,4 +1,4 @@
-<button class="btn btn-success m-1 cart" id="cart" routerLink="/compras/carrinho">
+<button class="btn btn-success m-1 cart" [style.bottom]="mBottom" id="cart" routerLink="/compras/carrinho">
   <i-shopping-cart></i-shopping-cart>
-  <span class="badge badge-pill ml-1" (change)="animate()">1{{cartValue}}</span>
+  <span class="badge badge-pill ml-1" (change)="animate()">5,00{{cartValue}}</span>
 </button>

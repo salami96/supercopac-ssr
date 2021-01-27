@@ -2,23 +2,47 @@
     min-height: 90vh;
     padding: 1em;
 }
+.share {
+    position: fixed;
+    bottom: 1.5em;
+    right: 1.5em;
+    z-index: 1050;
+    min-width: 3.5em;
+    min-height: 3.5em;
+    border-radius: 1.75em;
+    box-shadow: 1px 1px 5px 0 gray;
+    transition: 0.3s;
+    transition: bottom 0.1s;
+    color: #fff;
+}
+.share:hover {
+    transition: 0.3s;
+    transition: bottom 0.1s;
+    box-shadow: 1px 1px 10px 0 gray;
+}
 .clean-card {
     background: #fff;
     color: #1e7e34;
-    border: 1px solid rgba(0,0,0,.125);
-    border-top: 2px solid #11b176;
     display: grid;
     grid-template-rows: 1fr 1fr;
     gap: 0;
     border-radius: 0.25em;
     align-items: baseline;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 0.5em;
-    max-width: 500px;
-    width: 100vw;
+    width: 100%;
+    right: 0;
+    left: unset;
+    border: 1px solid rgba(0,0,0,.125);
+    border-top: 2px solid #11b176;
+    border-left: 1px solid rgba(0,0,0,.125);
+    max-width: 630px;
 }
-.clean-card.p-0 {
-    display: flex;
+@media (min-width: 630px) {
+    .clean-card {
+        border-left: 2px solid #11b176;
+        max-width: 500px;
+    }
 }
 .clean-card h5 {
     margin: 0;
@@ -30,7 +54,7 @@
     overflow: auto;
     padding: 3px 0;
     gap: 0.25em;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .wpp {
     height: 1.5em;
@@ -40,22 +64,22 @@
 }
 @media (min-width: 384px) {
     .masonry-item {
-        width: 48%;
+        width: 49%;
     }
 }
 @media (min-width: 576px) {
     .masonry-item {
-        width: 31.33%;
+        width: 32.33%;
     }
 }
 @media (min-width: 768px) {
     .masonry-item {
-        width: 23%;
+        width: 24%;
     }
 }
 @media (min-width: 1200px) {
     .masonry-item {
-        width: 18%;
+        width: 19%;
     }
 }
 /* @media (min-width: 1200px) {
@@ -70,7 +94,7 @@ ngx-masonry {
 .masonry-item {
     height: fit-content;
     max-width: 40em;
-    margin: 0 2% 2% 0;
+    margin: 0 1% 1% 0;
 }
 .buy-btn {
     border-radius: 2em;

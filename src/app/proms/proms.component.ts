@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { Prom } from '../models/entities';
 import { PromService } from '../services/prom.service';
 import { UserService } from '../services/user.service';
 // import { MatSnackBar } from '@angular/material';
 import { Meta, Title, DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { NgxMasonryOptions } from 'ngx-masonry';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-proms',
@@ -16,11 +17,13 @@ export class PromsComponent implements OnInit {
   link: SafeUrl;
   cartValue: string;
   selectedProm: Prom;
-  showShareBtn = true;
-
+  showShareBtn = false;
+  width: number;
   @Input() selected: string;
+
   constructor(
     private pService: PromService,
+    @Inject(PLATFORM_ID) private platformID: Object,
     public uService: UserService,
     // public snack: MatSnackBar,
     private meta: Meta,
@@ -40,6 +43,12 @@ export class PromsComponent implements OnInit {
       this.list = resp.filter(item => item._id !== this.selected);
       this.list = this.list.sort((a, b) => b.data.getDate() - a.data.getDate());
     });
+    if (isPlatformBrowser(this.platformID)) {
+      this.width = window.innerWidth;
+      window.onresize = () => {
+        this.width = window.innerWidth;
+      };
+    }
   }
 
   trackByFn(item): string {
@@ -120,5 +129,38 @@ export class PromsComponent implements OnInit {
     this.meta.updateTag({ property: 'og:image:type', content: 'image/jpg' });
     this.meta.updateTag({ property: 'og:image:width', content: '1200' });
     this.meta.updateTag({ property: 'og:image:height', content: '630' });
+  }
+
+  copyMessage(){
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = 'Olha essas ofertas do SuperCopac, veja todas em: https://copac.herokuapp.com.br/ofertas';
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+    this.showShareBtn = false;
+  }
+
+  sharePhone() {
+    if (isPlatformBrowser(this.platformID)) {
+      let nav: any;
+      nav = window.navigator
+
+      if (nav && nav.share) {
+        nav.share({
+          title: 'Supermercado Copac - Ofertas',
+          text: "Olha essas ofertas do SuperCopac, veja todas em: https://copac.herokuapp.com.br/ofertas",
+          url: 'https://copac.herokuapp.com.br/ofertas'
+        }).then(() => alert('Compartilhado com sucesso@'))
+        .catch(error => console.log('Error sharing:' + error));
+      } else {
+        this.showShareBtn = !this.showShareBtn;
+      }
+    }
   }
 }

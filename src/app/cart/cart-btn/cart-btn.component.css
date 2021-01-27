@@ -8,9 +8,11 @@
     border-radius: 1.75em;
     box-shadow: 1px 1px 5px 0 gray;
     transition: 0.3s;
+    transition: bottom 0.1s;
 }
 .cart:hover {
     transition: 0.3s;
+    transition: bottom 0.1s;
     box-shadow: 1px 1px 10px 0 gray;
 }
 .cart span {

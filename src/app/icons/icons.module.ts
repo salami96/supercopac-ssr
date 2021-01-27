@@ -38,15 +38,17 @@ import {
   IconUsers,
   IconFacebook,
   IconStar,
-  IconShare,
   IconHome,
   IconChevronLeft,
   IconChevronRight,
   IconPlusCircle,
   IconChevronUp,
-  IconTwitter
+  IconTwitter,
+  IconShare2,
+  IconLink
 } from 'angular-feather';
 import { LoadingAnimationComponent } from './loading/loading.component';
+import { IWhatsappComponent } from './i-whatsapp/i-whatsapp.component';
 
 const icons = [
   IconUser,
@@ -91,16 +93,18 @@ const icons = [
   IconUsers,
   IconFacebook,
   IconStar,
-  IconShare,
+  IconShare2,
   IconHome,
   IconGithub,
   IconLinkedin,
   IconPlusCircle,
-  LoadingAnimationComponent
+  LoadingAnimationComponent,
+  IWhatsappComponent,
+  IconLink
 ];
 
 @NgModule({
   exports: icons,
-  declarations: [ LoadingAnimationComponent ]
+  declarations: [ LoadingAnimationComponent, IWhatsappComponent ]
 })
 export class IconsModule { }
