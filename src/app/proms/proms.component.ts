@@ -107,7 +107,7 @@ export class PromsComponent implements OnInit {
 
   private updateMetaTags() {
     this.meta.addTag({name: 'description', content: 'Confira as promoções do supermercado copac!'});
-    const img = 'https://res.cloudinary.com/hcg7pmygp/image/upload/v1610996413/ofertas.png';
+    const img = 'https://res.cloudinary.com/hcg7pmygp/image/upload/q_auto/ofertas.png';
     const title = 'Supermercado Copac - Ofertas';
     const url = 'https://copac.herokuapp.com/ofertas';
     const description = 'Confira as ofertas do Supermercado Copac!';

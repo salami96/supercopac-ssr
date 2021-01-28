@@ -40,20 +40,23 @@ export interface Video {
   link: string;
 }
 export class CartItem {
-  constructor(p: Product, q: number) {
+  constructor(p: Product, q: number, o: string) {
     this.prod = p;
     this.quant = q;
     this.total = q * p.preco;
+    this.obs = this.obs;
   }
   prod: Product;
   quant: number;
   total: number;
+  obs: string;
 }
 export class Order {
   produtos: [{
     prod: Product,
     quant: number,
     total: number,
+    obs: string
   }];
   nome: string;
   telefone: string;
