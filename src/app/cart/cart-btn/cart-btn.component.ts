@@ -12,7 +12,13 @@ export class CartBtnComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.mBottom);
   }
 
+  animate() {
+    const node = document.getElementById('cart');
+    node.classList.add('animated', 'heartBeat');
+    setTimeout(() => {
+      node.classList.remove('animated', 'heartBeat');
+    }, 1000);
+  }
 }
