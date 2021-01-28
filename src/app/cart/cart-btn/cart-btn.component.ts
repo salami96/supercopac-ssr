@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cart-btn.component.css']
 })
 export class CartBtnComponent implements OnInit {
-
+  cartValue = '5,00';
   @Input() mBottom: string;
 
   constructor() { }
