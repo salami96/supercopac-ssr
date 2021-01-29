@@ -107,7 +107,8 @@ export class PromsComponent implements OnInit {
 
   private updateMetaTags() {
     this.meta.addTag({name: 'description', content: 'Confira as promoções do supermercado copac!'});
-    const img = 'https://res.cloudinary.com/hcg7pmygp/image/upload/q_auto/ofertas.png';
+    // const img = 'https://res.cloudinary.com/hcg7pmygp/image/upload/q_auto/ofertas.png';
+    const img = 'https://res.cloudinary.com/hcg7pmygp/image/upload/v1611955395/ofertas.png';
     const title = 'Supermercado Copac - Ofertas';
     const url = 'https://copac.herokuapp.com/ofertas';
     const description = 'Confira as ofertas do Supermercado Copac!';
@@ -125,7 +126,7 @@ export class PromsComponent implements OnInit {
     this.meta.updateTag({ property: 'twitter:title', content: title});
     this.meta.updateTag({ property: 'twitter:description', content: description });
     this.meta.updateTag({ property: 'twitter:image', content: img });
-    this.meta.updateTag({ property: 'og:type', content: 'image' });
+    this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:image:type', content: 'image/jpg' });
     this.meta.updateTag({ property: 'og:image:width', content: '1200' });
     this.meta.updateTag({ property: 'og:image:height', content: '630' });

@@ -33,7 +33,7 @@ export class TutoComponent implements OnInit {
     this.meta.updateTag({ property: 'twitter:title', content: title});
     this.meta.updateTag({ property: 'twitter:description', content: description });
     this.meta.updateTag({ property: 'twitter:image', content: img });
-    this.meta.updateTag({ property: 'og:type', content: 'image' });
+    this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:image:type', content: 'image/png' });
     this.meta.updateTag({ property: 'og:image:width', content: '946' });
     this.meta.updateTag({ property: 'og:image:height', content: '498' });
