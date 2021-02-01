@@ -107,8 +107,8 @@ export class PromsComponent implements OnInit {
 
   private updateMetaTags() {
     this.meta.addTag({name: 'description', content: 'Confira as promoções do supermercado copac!'});
-    // const img = 'https://res.cloudinary.com/hcg7pmygp/image/upload/q_auto/ofertas.png';
-    const img = 'https://res.cloudinary.com/hcg7pmygp/image/upload/v1611955395/ofertas.png';
+    const img1 = 'https://res.cloudinary.com/hcg7pmygp/image/upload/v1611955395/ofertas.png';
+    const img2 = 'https://res.cloudinary.com/hcg7pmygp/image/upload/w_400,h_400,c_fill,g_north_west/ofertas.png';
     const title = 'Supermercado Copac - Ofertas';
     const url = 'https://copac.herokuapp.com/ofertas';
     const description = 'Confira as ofertas do Supermercado Copac!';
@@ -127,15 +127,21 @@ export class PromsComponent implements OnInit {
     this.meta.updateTag({ property: 'twitter:image', content: img });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.removeTag("property='og:image'");
+    this.meta.removeTag("property='og:image:type'");
+    this.meta.removeTag("property='og:image:width'");
+    this.meta.removeTag("property='og:image:height'");
+    this.meta.removeTag("property='og:image:type'");
+    this.meta.removeTag("property='og:image:width'");
+    this.meta.removeTag("property='og:image:height'");
     this.meta.removeTag("property='og:image'");
-    this.meta.addTag({ property: 'og:image', content: img });
-    this.meta.updateTag({ property: 'og:image:type', content: 'image/png' });
-    this.meta.updateTag({ property: 'og:image:width', content: '1200' });
-    this.meta.updateTag({ property: 'og:image:height', content: '630' });
-    this.meta.addTag({ property: 'og:image', content: 'https://res.cloudinary.com/hcg7pmygp/image/upload/w_400,h_400,c_fill,g_north_west/ofertas.png' });
-    this.meta.updateTag({ property: 'og:image:type', content: 'image/png' });
-    this.meta.updateTag({ property: 'og:image:width', content: '400' });
-    this.meta.updateTag({ property: 'og:image:height', content: '400' });
+    this.meta.addTag({ property: 'og:image', content: img1 });
+    this.meta.addTag({ property: 'og:image:type', content: 'image/png' });
+    this.meta.addTag({ property: 'og:image:width', content: '1200' });
+    this.meta.addTag({ property: 'og:image:height', content: '630' });
+    this.meta.addTag({ property: 'og:image', content: img2 });
+    this.meta.addTag({ property: 'og:image:type', content: 'image/png' });
+    this.meta.addTag({ property: 'og:image:width', content: '400' });
+    this.meta.addTag({ property: 'og:image:height', content: '400' });
   }
 
   copyMessage(){
@@ -163,7 +169,7 @@ export class PromsComponent implements OnInit {
           title: 'Supermercado Copac - Ofertas',
           text: "Olha essas ofertas do SuperCopac, veja todas em: https://copac.herokuapp.com.br/ofertas",
           url: 'https://copac.herokuapp.com.br/ofertas'
-        }).then(() => alert('Compartilhado com sucesso@'))
+        }).then(() => alert('Compartilhado com sucesso!'))
         .catch(error => console.log('Error sharing:' + error));
       } else {
         this.showShareBtn = !this.showShareBtn;
