@@ -124,7 +124,7 @@ export class PromsComponent implements OnInit {
     this.meta.updateTag({ property: 'twitter:url', content: url });
     this.meta.updateTag({ property: 'twitter:title', content: title});
     this.meta.updateTag({ property: 'twitter:description', content: description });
-    this.meta.updateTag({ property: 'twitter:image', content: img });
+    this.meta.updateTag({ property: 'twitter:image', content: img1 });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.removeTag("property='og:image'");
     this.meta.removeTag("property='og:image:type'");
