@@ -22,7 +22,8 @@ export class VideoComponent implements OnInit {
   }
 
   private updateMetaTags() {
-    const img = 'https://copac.herokuapp.com/assets/play.png';
+    const img1 = 'https://res.cloudinary.com/hcg7pmygp/image/upload/v1612189762/play.png';
+    const img2 = 'https://res.cloudinary.com/hcg7pmygp/image/upload/w_400,h_400,c_pad,b_auto:predominant/play.png';
     const title = 'Supermercado Copac - Vídeo';
     const url = 'https://copac.herokuapp.com/video';
     const description = 'Confira o vídeo com as promoções da copac';
@@ -35,15 +36,27 @@ export class VideoComponent implements OnInit {
     this.meta.updateTag({ property: 'og:url', content: url });
     this.meta.updateTag({ property: 'og:title', content: title });
     this.meta.updateTag({ property: 'og:description', content: description });
-    this.meta.updateTag({ property: 'og:image', content: img });
     this.meta.updateTag({ property: 'twitter:url', content: url });
     this.meta.updateTag({ property: 'twitter:title', content: title });
     this.meta.updateTag({ property: 'twitter:description', content: description });
-    this.meta.updateTag({ property: 'twitter:image', content: img });
+    this.meta.updateTag({ property: 'twitter:image', content: img1 });
     this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:image:type', content: 'image/png' });
-    this.meta.updateTag({ property: 'og:image:width', content: '950' });
-    this.meta.updateTag({ property: 'og:image:height', content: '511' });
+    this.meta.removeTag("property='og:image'");
+    this.meta.removeTag("property='og:image:type'");
+    this.meta.removeTag("property='og:image:width'");
+    this.meta.removeTag("property='og:image:height'");
+    this.meta.removeTag("property='og:image:type'");
+    this.meta.removeTag("property='og:image:width'");
+    this.meta.removeTag("property='og:image:height'");
+    this.meta.removeTag("property='og:image'");
+    this.meta.addTag({ property: 'og:image', content: img1 });
+    this.meta.addTag({ property: 'og:image:type', content: 'image/png' });
+    this.meta.addTag({ property: 'og:image:width', content: '950' });
+    this.meta.addTag({ property: 'og:image:height', content: '511' });
+    this.meta.addTag({ property: 'og:image', content: img2 });
+    this.meta.addTag({ property: 'og:image:type', content: 'image/png' });
+    this.meta.addTag({ property: 'og:image:width', content: '400' });
+    this.meta.addTag({ property: 'og:image:height', content: '400' });
   }
 
   ngOnInit() {
