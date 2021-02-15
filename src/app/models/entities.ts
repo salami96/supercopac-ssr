@@ -2,7 +2,7 @@ export interface Prom {
   _id: string;
   titulo: string;
   descricao: string;
-  img: string[];
+  img: string;
   data: Date;
   dataFinal: Date;
   autor: User;

@@ -2,16 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './cart.component';
 import { IconsModule } from '../icons/icons.module';
-import { CartBtnComponent } from './cart-btn/cart-btn.component';
+import { CartBtnComponent } from '../cart-btn/cart-btn.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [ CartComponent, CartBtnComponent ],
+  declarations: [ CartComponent ],
   imports: [
     IconsModule,
-    CommonModule
-  ],
-  exports: [
-    CartBtnComponent
+    CommonModule,
+    RouterModule.forChild([
+      { path: '', component: CartComponent }
+    ])
   ]
 })
 export class CartModule { }

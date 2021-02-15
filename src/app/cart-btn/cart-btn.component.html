@@ -1,4 +1,4 @@
-<button class="btn btn-success m-1 cart" [style.bottom]="mBottom" id="cart" routerLink="/compras/carrinho">
+<button class="btn btn-success m-1 cart" [style.bottom]="mBottom" id="cart" (click)="nav()">
   <i-shopping-cart></i-shopping-cart>
   <span class="badge badge-pill ml-1" (change)="animate()">{{cartValue}}</span>
 </button>

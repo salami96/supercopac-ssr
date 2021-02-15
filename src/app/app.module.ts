@@ -13,8 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import * as mask from 'ngx-mask';
 import { HomeComponent } from './home/home.component';
-import { CartModule } from './cart/cart.module';
-import { CartBtnComponent } from './cart/cart-btn/cart-btn.component';
+import { CartBtnModule } from './cart-btn/cart-btn.module';
 
 export const options: Partial<mask.IConfig> = {
   validation: false,
@@ -30,7 +29,7 @@ export const options: Partial<mask.IConfig> = {
   imports: [
     AppRoutingModule,
     BrowserModule.withServerTransition({ appId: 'supercopac-ssr' }),
-    CartModule,
+    CartBtnModule,
     FormsModule,
     HttpClientModule,
     IconsModule,
@@ -39,7 +38,7 @@ export const options: Partial<mask.IConfig> = {
   ],
   providers: [
     AppRoutingModule,
-    CartModule,
+    CartBtnModule,
     IconsModule,
     UserService
   ],

@@ -41,7 +41,8 @@ export class PromsComponent implements OnInit {
     this.updateMetaTags();
     this.pService.getProms().subscribe( resp => {
       this.list = resp.filter(item => item._id !== this.selected);
-      this.list = this.list.sort((a, b) => b.data.getDate() - a.data.getDate());
+      this.list.forEach(p => p.img = this.minifyImgs(p.img));
+      // this.list = this.list.sort((a, b) => b.data.getDate() - a.data.getDate());
     });
     if (isPlatformBrowser(this.platformID)) {
       this.width = window.innerWidth;
@@ -67,7 +68,7 @@ export class PromsComponent implements OnInit {
       return '';
     }
     const aux = date.split('/');
-    return aux[1] + '/' + (aux[0].length < 2 ? '0' + aux[0] : aux[0]) + '/' + aux[2];
+    return (aux[1].length < 2 ? '0' + aux[1] : aux[1]) + '/' + (aux[0].length < 2 ? '0' + aux[0] : aux[0]) + '/' + aux[2];
   }
 
   // remove(item) {
@@ -175,5 +176,11 @@ export class PromsComponent implements OnInit {
         this.showShareBtn = !this.showShareBtn;
       }
     }
+  }
+
+  minifyImgs(url: string) {
+    if (!url.includes('firebase'))
+      return url.replace(url.substr(50,11),'q_auto:low,w_200,c_fill');
+    return url;
   }
 }

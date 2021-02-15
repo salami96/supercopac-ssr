@@ -24,14 +24,17 @@ import { FormComponent } from '../form/form.component'; */
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'comprar', loadChildren: 'app/proms/proms.module#PromsModule' },
+  { path: 'carrinho', loadChildren: 'app/cart/cart.module#CartModule' },
   { path: 'tutorial', loadChildren: 'app/tuto/tuto.module#TutoModule' },
   { path: 'ofertas', loadChildren: 'app/proms/proms.module#PromsModule' },
+  { path: 'oferta', loadChildren: 'app/proms/proms.module#PromsModule' },
   { path: 'video', loadChildren: 'app/video/video.module#VideoModule' },
   { path: 'sobre-nos', loadChildren: 'app/about/about.module#AboutModule' },
   { path: 'nada-encontrado', loadChildren: 'app/errors/errors.module#ErrorsModule' },
   { path: 'home', redirectTo: '' },
   { path: 'compras', redirectTo: 'comprar' },
   { path: 'saiba-mais', redirectTo: 'tutorial' },
+  { path: 'tuto', redirectTo: 'tutorial' },
   { path: 'proms', redirectTo: 'ofertas' },
   { path: 'about', redirectTo: 'sobre-nos' },
   { path: '**', redirectTo: 'nada-encontrado' }

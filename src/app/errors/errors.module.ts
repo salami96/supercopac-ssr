@@ -6,10 +6,8 @@ import { RouterModule } from '@angular/router';
     declarations: [E404Component],
     imports: [
         RouterModule.forChild([
-            { path: '', component: E404Component, children: [
-
-            ] }
-        ]
-    )]
+            { path: '', component: E404Component }
+        ])
+    ]
 })
 export class ErrorsModule { }
