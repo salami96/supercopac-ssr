@@ -1,9 +1,13 @@
 <div class="container-fluid">
   <ngx-masonry [options]="myOptions" [useImagesLoaded]="true" class="mx-auto mt-2">
     <div ngxMasonryItem class="masonry-item card col-md text-center p-1" *ngFor="let product of list">
-      <div class="card-header">
-        <h5 class="card-title">{{product.titulo}}</h5>
-        <span class="badge badge-pill badge-success">até {{getDate(product.dataFinal | date : "shortDate")}}</span>
+      <h5 class="card-title">{{product.titulo}}</h5>
+      <div class="badges">
+        <span class="badge badge-success mb-1">
+          {{getValue(product.descricao)[0]}}
+          <span class="offer-value">{{getValue(product.descricao)[1]}}</span>
+        </span>
+        <span class="badge badge-success" *ngIf="product.dataFinal">até {{getDate(product.dataFinal | date : "shortDate")}}</span>
       </div>
       <div class="overlay">
         <img class="card-img-top d-block" src="{{product.img}}">
@@ -14,13 +18,10 @@
           Ver Mais
         </a>
       </div>
-      <div class="card-body">
-        <b class="card-text">{{product.descricao}}</b>
-      </div>
       <div class="card-footer text-center">
-        <button type="button" class="btn-success btn buy-btn btn-sm" aria-label="Comprar" data-toggle="modal"
+        <button type="button" class="btn-success btn btn-block" aria-label="Comprar" data-toggle="modal"
           data-target="#pegar-oferta" (click)="selectedProm = product">
-          <i-plus-circle></i-plus-circle>
+          <i-percent></i-percent>
           Pegar Oferta
         </button>
         <button *ngIf="uService.user" type="button" (click)="remove(product)" class="btn btn-danger"
@@ -44,16 +45,16 @@
         WhatsApp
       </span>
       <a href="https://www.facebook.com/sharer/sharer.php?u=copac.herokuapp.com/ofertas" 
-      target="_blank" class="btn-primary btn-sm btn fb rounded">
+      target="_blank" class="btn-primary btn-sm btn fb">
         <i-facebook></i-facebook>
         Facebook
       </a>
       <a href="http://twitter.com/share?text=Olha%20essas%20ofertas%20do%20SuperCopac&url=https://copac.herokuapp.com/ofertas&hashtags=ofertas,copac,supermercado,charqueadas"
-      target="_blank" class="btn-info btn-sm btn rounded">
+      target="_blank" class="btn-info btn-sm btn">
         <i-twitter></i-twitter>
         Twitter
       </a>
-      <button class="btn-secondary btn-sm btn rounded" (click)="copyMessage()">
+      <button class="btn-secondary btn-sm btn" (click)="copyMessage()">
         <i-link></i-link>
         Copiar Link
       </button>
@@ -61,3 +62,4 @@
   </div>
 </div>
 <app-cart-btn [mBottom]="showShareBtn && (width < 630) ? '7em' : '1.5em'"></app-cart-btn>
+<app-modal [prom]="selectedProm" *ngIf="selectedProm"></app-modal>

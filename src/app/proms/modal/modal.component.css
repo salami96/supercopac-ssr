@@ -1,0 +1,24 @@
+.input-group {
+    justify-content: center !important;
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    min-width: 20px;
+    max-width: 35px;
+    text-align: center;
+    font-size: small;
+}
+.buy-btn {
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+}
+.d-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: baseline;
+    justify-items: center;
+}

@@ -1,0 +1,45 @@
+<div class="modal fade" id="pegar-oferta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content top-green">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          Adicionar ao Carrinho!
+        </h5>
+        <button type="button" class="close" id="close-modal" data-dismiss="modal" aria-label="Close">
+          <i-x></i-x>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngFor="let prod of prom.product">
+          <h5>{{prod.nome}}</h5>
+          <div class="d-grid">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-success" type="button" (click)="setQuant(prod.cod, 'rm')">
+                  -
+                </button>
+              </div>
+              <input type="number" min="1" max="50" [(ngModel)]="quant[prod.cod]" (change)="checkValue(prod.cod)">
+              <div class="input-group-append">
+                <button class="btn btn-outline-success" type="button" (click)="setQuant(prod.cod, 'add')">
+                  +
+                </button>
+              </div>
+            </div>
+            <h6>{{getFormattedPrice(prod.preco * quant[prod.cod])}}</h6>
+          </div>
+          <div class="label-float mb-3">
+            <input type="text" [(ngModel)]="obs[prod.cod]" placeholder=" " (keyup.enter)="add2Cart(prod)" autofocus />
+            <label>Observação</label>
+          </div>
+          <button class="btn btn-block btn-success buy-btn" type="button" (click)="add2Cart(prod)">
+            <i-shopping-cart></i-shopping-cart>
+            Comprar
+          </button>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

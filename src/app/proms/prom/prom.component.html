@@ -1,3 +1,85 @@
-<p>
-  prom works!
-</p>
+<!-- <div class="container-fluid">
+  <div id="main" class="card clean-card">
+    <div class="m-2" *ngIf="loading">
+      <div class="row no-gutters">
+        <div class="col-md-4 col-12 my-auto mx-auto p-1">
+          <img class="card-img" src="/assets/loader.gif">
+        </div>
+        <div class="col-md-8 col-12 my-auto">
+          <div class="card-body">
+            <h4 class="card-title">Carregando...</h4>
+            <p class="card-text">Aguarde enquando buscamos as informações desta promoção!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m-2" *ngIf="!loading && erro">
+      <div class="row no-gutters">
+        <div class="col-md-4 col-12 my-auto text-center p-1">
+          <img class="card-img w-50" src="/assets/confused.png">
+        </div>
+        <div class="col-md-8 col-12 my-auto">
+          <div class="card-body">
+            <h4 class="card-title">Nada Encontrado!</h4>
+            <p class="card-text">Não foi possível encontrar esta promoção, mas não tem problema...</p>
+            <p>Tem várias outras te esperando aqui!
+              <a class="btn btn-sm btn-success rounded" role="button" href="/prom">Promoções</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m-2 p-0 text-center" *ngIf="!erro && !loading">
+      <button *ngIf="uService.user" type="button" (click)="remove()" class="close" aria-label="Excluir">
+        <i-trash-2></i-trash-2>
+      </button>
+      <div class="row no-gutters">
+        <div class="col-md-6 col-12 my-auto text-center p-1">
+          <img class="card-img" src="{{prom.img}}">
+        </div>
+        <div class="col-md-6 col-12 text-center my-auto">
+          <div class="card-body">
+            <h4 class="card-title">{{prom.titulo}}</h4>
+            <h6>{{prom.descricao}}</h6>
+            <h6>
+              <span class="badge badge-light text-success badge-pill">
+                <i-calendar></i-calendar>
+                Oferta válida desde: {{getDate(prom.data | date : "shortDate")}}
+              </span>
+              <span *ngIf="prom.dataFinal != null" class="badge badge-light text-success badge-pill">
+                <i-calendar></i-calendar>
+                Oferta válida até: {{getDate(prom.dataFinal | date : "shortDate")}}
+              </span>
+            </h6>
+          </div>
+          <div class="card-footer">
+            <button type="button" class="btn-success btn buy-btn btn-sm" aria-label="Comprar" data-toggle="modal" data-target="#pegar-oferta" (click)="selectedProm = product">
+              <i-percent></i-percent>
+              Pegar Oferta
+            </button>
+            <br>
+            <button class="btn btn-success buy-btn btn-sm m-1" (click)="share(prom)">
+              <img src="../../assets/wpp.png" alt="WhatsApp Icon" class="wpp">
+              Compartilhar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer" *ngIf="!erro && !loading">
+    <app-cart-btn cartValue="{{cartValue}}"></app-cart-btn>
+    <h4 class="mt-5 mb-3 text-center" *ngIf="innerWidth > 576">Outras Promoções...</h4>
+    <app-proms *ngIf="innerWidth > 576" selected={{id}}></app-proms>
+    <div class="card clean-card col-md warnings p-1 mt-2" *ngIf="innerWidth < 576">
+      <div class="card-header bg-light">
+        <h4 class="card-title">Quer mais?</h4>
+      </div>
+      <a class="card-body mt-2" [routerLink]="['/proms']">
+        <i-dollar-sign></i-dollar-sign>
+        <b>Ver todas as Promoções</b>
+      </a>
+    </div>
+  </div>
+</div>
+<app-modal (onUpdate)="setValue($event)" [prom]="prom" *ngIf="prom"></app-modal> -->

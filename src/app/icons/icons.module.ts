@@ -33,7 +33,6 @@ import {
   IconEdit,
   IconAlertCircle,
   IconHeart,
-  IconTrendingDown,
   IconPlay,
   IconUsers,
   IconFacebook,
@@ -45,7 +44,8 @@ import {
   IconChevronUp,
   IconTwitter,
   IconShare2,
-  IconLink
+  IconLink,
+  IconPercent
 } from 'angular-feather';
 import { LoadingAnimationComponent } from './loading/loading.component';
 import { IWhatsappComponent } from './i-whatsapp/i-whatsapp.component';
@@ -88,7 +88,7 @@ const icons = [
   IconEdit,
   IconAlertCircle,
   IconHeart,
-  IconTrendingDown,
+  IconPercent,
   IconPlay,
   IconUsers,
   IconFacebook,

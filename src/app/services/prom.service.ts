@@ -14,8 +14,6 @@ export class PromService {
   // url = 'http://10.1.1.104:3000/';
   // url = 'http://192.168.0.107:30000/';
   url = 'https://sendproms.herokuapp.com/api/';
-  prom: Prom;
-  proms: Prom[];
 
   constructor(private http: HttpClient, private uService: UserService) { }
 
@@ -76,9 +74,9 @@ export class PromService {
     return this.http.get<Prom[]>(this.url + 'new-proms/');
   }
 
-  // getProm(id: string): Observable<Prom> {
-  //   return this.http.get<Prom>(this.url + 'prom/' + id);
-  // }
+  getProm(id: string): Observable<Prom> {
+    return this.http.get<Prom>(this.url + 'prom/' + id);
+  }
 
 
   // removeProm(id: string): Observable<boolean> {

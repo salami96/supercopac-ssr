@@ -6,13 +6,16 @@ import { CommonModule } from '@angular/common';
 import { IconsModule } from '../icons/icons.module';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { CartBtnModule } from '../cart-btn/cart-btn.module';
+import { ModalComponent } from './modal/modal.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [ PromsComponent, PromComponent ],
+  declarations: [ PromsComponent, PromComponent, ModalComponent ],
   imports: [
     CartBtnModule,
     CommonModule,
+    FormsModule,
     IconsModule,
     NgxMasonryModule,
     RouterModule.forChild([

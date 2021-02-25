@@ -33,7 +33,8 @@ export class PromsComponent implements OnInit {
 
   public myOptions: NgxMasonryOptions = {
     horizontalOrder: true,
-    percentPosition: true
+    percentPosition: true,
+    transitionDuration: '0.2s'
   };
 
 
@@ -176,6 +177,15 @@ export class PromsComponent implements OnInit {
         this.showShareBtn = !this.showShareBtn;
       }
     }
+  }
+
+  getValue(text: string) {
+    if(text.includes('apenas')) {
+      return [text.split('apenas ')[0] + 'apenas ', text.split('apenas ')[1]];
+    } else {
+      return [text.split('por ')[0] + 'por ', text.split('por ')[1]];
+    }
+      
   }
 
   minifyImgs(url: string) {

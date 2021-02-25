@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { CartItem, Product, Order } from '../models/entities';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { isPlatformBrowser } from '@angular/common';
 // import * as io from 'socket.io-client';
 
 
@@ -11,12 +12,30 @@ import { HttpClient } from '@angular/common/http';
 export class CartService {
 
   value = 0;
-  prods: CartItem[];
+  prods: CartItem[] = [];
+  private _prodsObs: Observer<CartItem[]>;
+  private _valueObs: Observer<number>;
   // private socket: SocketIOClient.Socket;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformID: Object,
+  ) {
     // this.socket = io('https://sendproms.herokuapp.com/');
+    if(isPlatformBrowser(platformID)) {
+      this._prodsObs.next(this.getItems());
+    }
   }
+
+  getCartItems= new Observable<CartItem[]>((observer) => {
+    observer.next([]);
+    this._prodsObs = observer;
+  });
+
+  getCartValue= new Observable<number>((observer) => {
+    observer.next();
+    this._valueObs = observer;
+  });
 
   add(p: Product, q: number, o: string): string {
     let contains = false;
@@ -35,6 +54,8 @@ export class CartService {
       this.prods.push(item);
       this.value += item.total;
     }
+    this._prodsObs.next(this.prods);
+    this._valueObs.next(this.value);
     this.saveItems();
     const ret = this.total();
     return ret;
